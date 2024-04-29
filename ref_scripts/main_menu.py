@@ -3,7 +3,6 @@ import time
 from pygame.locals import *
 import pygame
 import random
-from versus import versus
 import sys
 #
 HEIGHT, WIDTH = 320, 200
@@ -26,10 +25,10 @@ def start_animation():
     font = pygame.font.SysFont(None, 52)
     #
     for i in range(120):
-        time.sleep(0.01)
+        time.sleep(0.02)
         #
         print_screen_backround(BACKROUND_IMAGE)
-        img = font.render(msg, True, (i + 50, i + i, i))
+        img = font.render(msg, True, (i ,  i, i))
         screen.blit(img, (20, 200 - i))
         #
         pygame.display.update()
@@ -85,8 +84,7 @@ while True:
     keys = pygame.key.get_pressed()
     #
     if keys[K_1]:
-        versus()
-        versus()
+        print('Helo')
     if keys[K_2]:
         msg = "Joc per:"
         credit_animation()
