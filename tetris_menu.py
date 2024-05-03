@@ -1,5 +1,6 @@
 #
 import time, pygame, random, sys
+from pygame import *
 #
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
