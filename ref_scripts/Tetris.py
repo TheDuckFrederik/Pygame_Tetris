@@ -4,7 +4,6 @@ import pygame
 """
 10 x 20 grid
 play_height = 2 * play_width
-
 tetriminos:
     0 - S - green
     1 - Z - red
