@@ -73,10 +73,6 @@ print_menu()
 #
 while True:
     #
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-    #
     pygame.display.update()
     #
     keys = pygame.key.get_pressed()
