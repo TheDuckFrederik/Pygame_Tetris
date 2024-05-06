@@ -1,6 +1,9 @@
 #
-import time, pygame, random, sys
-from pygame import *
+import time
+from pygame.locals import *
+import pygame
+import random
+import sys
 #
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
