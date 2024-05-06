@@ -10,7 +10,7 @@ tetriminos:
     2 - I - cyan
     3 - O - yellow
     4 - J - blue
-    5 - L - orange
+    5 - L - orangeas
     6 - T - purple
 """
 

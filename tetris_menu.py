@@ -31,7 +31,7 @@ def credit_animation(x):
         #
         pygame.display.update()
     #
-time.sleep(0.7)
+    time.sleep(0.7)
 #
 def print_menu():
     print_screen_backround(BACKGROUND_IMAGE)
@@ -114,13 +114,13 @@ while True:
         time.sleep(0.5)
         pygame.display.update()
         #
-        pygame.time.delay(2000) # wait for 2 seconds before quitting
+        pygame.time.delay(2000)
         pygame.quit()
         sys.exit()
     #
     if keys[K_3]:
         pygame.display.update()
-        pygame.time.delay(2000) # wait for 2 seconds before quitting
+        pygame.time.delay(2000)
         pygame.quit()
         sys.exit()
     #
