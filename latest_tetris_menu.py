@@ -19,7 +19,7 @@ def print_screen_backround(image):
     backround = pygame.image.load(image).convert()
     screen.blit(backround, (0, 0))
 #
-def credit_animation(x):
+def credit_animation(credit, x):
     print_screen_backround(BACKGROUND_IMAGE)
     pygame.display.update()
     #
@@ -56,23 +56,19 @@ def print_menu():
     pygame.display.update()
 #
 while True:
-    # credit = 'Jan Vilaplana'
-    # credit_animation(217)
+    # credit_animation('Jan Vilaplana', 217)
     # #
-    # credit = '&'
-    # credit_animation(315)
+    # credit_animation('&', 315)
     #
-    credit = 'Unai O. Pujol'
-    credit_animation(220)
+    credit_animation('Unai O. Pujol',220)
     #
-    credit = 'presenta:'
-    credit_animation(250)
+    credit_animation('presenta:', 250)
     #
-    credit = 'TETRIS'
-    credit_animation(260)
+    credit_animation('TETRIS', 260)
     #
     break
 #
+credit = credit
 def tetris_menu():
     print_menu()
     #
@@ -85,47 +81,33 @@ def tetris_menu():
         if keys[K_1]:
             print('Helo')
         if keys[K_2]:
-            while True:
-                credit = 'Sprites per:'
-                credit_animation(210)
-                #
-                credit = 'Jan Vilaplana'
-                credit_animation(217)
-                #
-                credit = '&'
-                credit_animation(315)
-                #
-                credit = 'Unai O. Pujol'
-                credit_animation(220)
-                #
-                credit = 'Codi per:'
-                credit_animation(240)
-                #
-                credit = 'Unai O. Pujol'
-                credit_animation(220)
-                #
-                credit = 'Musica per:'
-                credit_animation(220)
-                #
-                credit = 'Unai O. Pujol'
-                credit_animation(220)
-                #
-                credit = 'El millor profe del mon:'
-                credit_animation(120)
-                #
-                credit = boing
-                credit_animation(200)
-                #
-                credit = 'Ayuda ocasional:'
-                credit_animation(170)
-                #
-                credit = 'Jan Vilaplana'
-                credit_animation(217)
-                #
-                time.sleep(0.5)
-                pygame.display.update()
-                #
-                break
+            credit_animation('Sprites per:', 210)
+            #
+            credit_animation('Jan Vilaplana', 217)
+            #
+            credit_animation('&', 315)
+            #
+            credit_animation('Unai O. Pujol', 220)
+            #
+            credit_animation('Codi per:', 240)
+            #
+            credit_animation('Unai O. Pujol', 220)
+            #
+            credit_animation('Musica per:', 220)
+            #
+            credit_animation('Unai O. Pujol', 220)
+            #
+            credit_animation('El millor profe del mon:', 120)
+            #
+            credit_animation(boing, 200)
+            #
+            credit_animation('Ayuda ocasional:', 170)
+            #
+            credit_animation('Jan Vilaplana', 217)
+            #
+            time.sleep(0.5)
+            pygame.display.update()
+            #
             tetris_menu()
         #
         if keys[K_3]:
