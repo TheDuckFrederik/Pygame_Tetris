@@ -8,7 +8,7 @@ import sys
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
 credit = ''
-boing = 'Xavi Sancho'
+boing = 'Raquel Vargas'
 x = 0
 #
 pygame.init()
