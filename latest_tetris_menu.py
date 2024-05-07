@@ -79,7 +79,7 @@ def tetris_menu():
         keys = pygame.key.get_pressed()
         #
         if keys[K_1]:
-            print('Latest')
+            print('Helo')
         if keys[K_2]:
             credit_animation('Sprites per:', 210)
             #
