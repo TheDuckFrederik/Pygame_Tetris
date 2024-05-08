@@ -4,7 +4,7 @@ import time, pygame, random, sys
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
 credit = ''
-boing = 'Alberto Vellon'
+boing = 'Xavi Sancho'
 #
 pygame.init()
 screen = pygame.display.set_mode((HEIGHT, WIDTH))
