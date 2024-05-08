@@ -107,8 +107,6 @@ def tetris_menu():
             #
             time.sleep(0.5)
             pygame.display.update()
-            #
-            break
         #
         if keys[K_3]:
             pygame.display.update()
@@ -119,5 +117,7 @@ def tetris_menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+        #
+        print_menu()
     #
 tetris_menu()

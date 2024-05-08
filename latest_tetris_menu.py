@@ -117,7 +117,7 @@ def tetris_menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-    #
-    tetris_menu()
+        #
+        print_menu()
     #
 tetris_menu()
