@@ -349,7 +349,7 @@ def main_game():
         for l in completas:
             tablero.pop(l)
             tablero.insert(0,[0,0,0,0,0,0,0,0,0,0])
-            puntos += 10
+            puntos += 1
         return puntos
 
     salir = False
@@ -360,25 +360,25 @@ def main_game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-        if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
-            if event.key == K_LEFT:
-                if mover_izquierda():
-                    copia_matriz(temporal, pieza)
-                tiempo_ultima_accion = current_time
+            if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
+                if event.key == K_LEFT:
+                    if mover_izquierda():
+                        copia_matriz(temporal, pieza)
+                    tiempo_ultima_accion = current_time
 
-            elif event.key == K_RIGHT:
-                if mover_derecha():
-                    copia_matriz(temporal,pieza)
-                tiempo_ultima_accion = current_time
-            elif event.key == K_DOWN:
-                temps_ultima_jugada -= temps_jugada
-            elif event.key == K_UP:
-                try:
-                    if not rotar():
+                elif event.key == K_RIGHT:
+                    if mover_derecha():
                         copia_matriz(temporal,pieza)
                     tiempo_ultima_accion = current_time
-                except:
-                    pass
+                elif event.key == K_DOWN:
+                    temps_ultima_jugada -= temps_jugada
+                elif event.key == K_UP:
+                    try:
+                        if not rotar():
+                            copia_matriz(temporal,pieza)
+                        tiempo_ultima_accion = current_time
+                    except:
+                        pass
         #
         vista = crear_vista(vista,tablero,pieza)
         #Imprimir gráficos:
@@ -406,10 +406,10 @@ def main_game():
         if puntos >= 2:
             temps_jugada = 300
         if puntos >= 4:
-            temps_jugada = 200
+            temps_jugada = 275
         if puntos >= 6:
-            temps_jugada = 100
+            temps_jugada = 250
         if puntos >= 8:
-            temps_jugada = 50
+            temps_jugada = 225
         if puntos >= 10:
-            temps_jugada = 30
+            temps_jugada = 200
