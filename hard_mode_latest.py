@@ -1,7 +1,9 @@
+#
 import random
 import numpy as np
 import pygame
 from pygame.locals import *
+#
 def hard_mode():
     # El tablero tiene 22 posiciones de alto, 2 fuera del tablero de juego propiamente dicho y 20 efectivas.
     ALTO = 22
