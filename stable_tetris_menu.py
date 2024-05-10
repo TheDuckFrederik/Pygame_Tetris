@@ -4,6 +4,8 @@ from pygame.locals import *
 import pygame
 import random
 import sys
+import numpy as np
+from latest_tetris_game import main_game
 #
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
@@ -79,7 +81,7 @@ def tetris_menu():
         keys = pygame.key.get_pressed()
         #
         if keys[K_1]:
-            print('Helo')
+            print('game.py')
         if keys[K_2]:
             credit_animation('Sprites per:', 210)
             #
@@ -118,6 +120,7 @@ def tetris_menu():
             if event.type == pygame.QUIT:
                 pygame.quit()
         #
-        print_menu()
+        if keys[K_2]:
+            print_menu()
     #
 tetris_menu()
