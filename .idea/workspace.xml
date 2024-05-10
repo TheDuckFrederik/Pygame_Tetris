@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="159555bb-b9c7-4285-aee4-88474648b90a" name="Changes" comment="v.0.1.18">
-      <change beforePath="$PROJECT_DIR$/latest_tetris_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/latest_tetris_game.py" afterDir="false" />
+    <list default="true" id="159555bb-b9c7-4285-aee4-88474648b90a" name="Changes" comment="v.0.1.19">
+      <change afterPath="$PROJECT_DIR$/hard_mode_latest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu_latest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref_scripts/mutating_tetris.py" beforeDir="false" afterPath="$PROJECT_DIR$/ref_scripts/mutating_tetris.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +36,12 @@
     &quot;assignee&quot;: &quot;UnOvPj&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/UnOvPj/Pygame_Tetris.git&quot;,
-    &quot;accountId&quot;: &quot;f6c44c74-7456-418b-9814-26f744074e20&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UnOvPj/Pygame_Tetris.git",
+    "accountId": "24b147ea-e5bb-4a92-b357-a2d2e7e73eaa"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -52,21 +55,23 @@
   "keyToString": {
     "Python.1.executor": "Run",
     "Python.Tetris.executor": "Run",
+    "Python.hard_mode_latest.executor": "Run",
     "Python.latest_tetris_game.executor": "Run",
     "Python.latest_tetris_menu.executor": "Run",
     "Python.main_menu.executor": "Run",
+    "Python.menu_latest.executor": "Run",
     "Python.mutating_tetris.executor": "Run",
     "Python.stable.executor": "Run",
     "Python.stable_tetris_menu.executor": "Run",
     "Python.tetris_menu.executor": "Run",
     "Python.versus.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "test",
+    "git-widget-placeholder": "R&&D",
     "last_opened_file_path": "C:/Users/Rach3/Downloads/tetris-pygame-master"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.latest_tetris_menu">
-    <configuration name="Tetris" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.menu_latest">
+    <configuration name="hard_mode_latest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tetris" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,11 +80,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ref_scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ref_scripts/Tetris.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hard_mode_latest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,6 +137,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="menu_latest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tetris" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/menu_latest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="mutating_tetris" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tetris" />
       <option name="ENV_FILES" value="" />
@@ -154,35 +181,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stable_tetris_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Tetris" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stable_tetris_menu.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.menu_latest" />
+        <item itemvalue="Python.hard_mode_latest" />
         <item itemvalue="Python.latest_tetris_menu" />
         <item itemvalue="Python.latest_tetris_game" />
         <item itemvalue="Python.mutating_tetris" />
-        <item itemvalue="Python.stable_tetris_menu" />
-        <item itemvalue="Python.Tetris" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715326841015</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="v.0.1.19">
+      <option name="closed" value="true" />
+      <created>1715380401638</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715380401638</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,7 +452,8 @@
     <MESSAGE value="v.0.1.16" />
     <MESSAGE value="v.0.1.17" />
     <MESSAGE value="v.0.1.18" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.1.18" />
+    <MESSAGE value="v.0.1.19" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.1.19" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

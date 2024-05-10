@@ -5,7 +5,8 @@ import pygame
 import random
 import sys
 import numpy as np
-from latest_tetris_game import main_game
+from game_latest import main_game
+from hard_mode_latest import hard_mode
 #
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
@@ -52,10 +53,10 @@ def print_menu():
     img3 = font.render("3 - Credits", True, (255, 255, 255))
     img4 = font.render("4 - Exit", True, (255, 255, 255))
     #
-    screen.blit(img1, (285, 50))
-    screen.blit(img2, (285, 90))
-    screen.blit(img3, (285, 130))
-    screen.blit(img3, (285, 170))
+    screen.blit(img1, (265, 50))
+    screen.blit(img2, (265, 90))
+    screen.blit(img3, (265, 130))
+    screen.blit(img4, (265, 170))
     #
     pygame.display.update()
 #
@@ -85,7 +86,7 @@ def tetris_menu():
         if keys[K_1]:
             main_game()
         if keys[K_2]:
-            main_game()
+            hard_mode()
         if keys[K_3]:
             credit_animation('Sprites per:', 210)
             #
