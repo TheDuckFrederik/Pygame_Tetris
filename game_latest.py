@@ -1,4 +1,6 @@
 import random
+import time
+
 import numpy as np
 import pygame
 from pygame.locals import *
@@ -120,11 +122,13 @@ def main_game():
 
     pygame.init()
     pantalla = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
+    death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
     # CREAR LA SUPERFÍCIE TRANSPARENTE I EL RECTÁNGULO SOBRE ELLA:
     seccion_transparente = pygame.Surface((200,400),pygame.SRCALPHA)
     pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,400))
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
+    DEATH_SCREEN = 'assets/background/Death_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -142,6 +146,10 @@ def main_game():
         # Imprimeixo imatge de fons:
         background = pygame.image.load(image).convert()
         pantalla.blit(background, (0, 0))
+    def imprimir_death(image):
+        # Imprimeixo imatge de fons:
+        background = pygame.image.load(image).convert()
+        death.blit(background, (0, 0))
 
     # Esta función deja a cero la matriz pieza
     def vaciar_pieza():
@@ -413,3 +421,6 @@ def main_game():
             temps_jugada = 225
         if puntos >= 10:
             temps_jugada = 200
+    #
+    imprimir_death(DEATH_SCREEN)
+    time.sleep(3)
