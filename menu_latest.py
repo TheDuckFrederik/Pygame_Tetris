@@ -9,7 +9,7 @@ from game_latest import main_game
 from hard_mode_latest import hard_mode
 #
 HEIGHT, WIDTH = 640, 480
-BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
+BACKGROUND_IMAGE = 'assets/background/menu_background_2.png'
 credit = ''
 boing = 'Xavi Sancho'
 x = 0
