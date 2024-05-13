@@ -360,25 +360,25 @@ while not (salir):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-    if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
-        if event.key == K_LEFT:
-            if mover_izquierda():
-                copia_matriz(temporal,pieza)
-            tiempo_ultima_accion = current_time
-
-        elif event.key == K_RIGHT:
-            if mover_derecha():
-                copia_matriz(temporal,pieza)
-            tiempo_ultima_accion = current_time
-        elif event.key == K_DOWN:
-            temps_ultima_jugada -= temps_jugada
-        elif event.key == K_UP:
-            try:
-                if not rotar():
+        if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
+            if event.key == K_LEFT:
+                if mover_izquierda():
                     copia_matriz(temporal,pieza)
                 tiempo_ultima_accion = current_time
-            except:
-                pass
+
+            if event.key == K_RIGHT:
+                if mover_derecha():
+                    copia_matriz(temporal,pieza)
+                tiempo_ultima_accion = current_time
+            if event.key == K_DOWN:
+                temps_ultima_jugada -= temps_jugada
+            if event.key == K_UP:
+                try:
+                    if not rotar():
+                        copia_matriz(temporal,pieza)
+                    tiempo_ultima_accion = current_time
+                except:
+                    pass
     vista = crear_vista(vista,tablero,pieza)
     #Imprimir gráficos:
     imprimir_pantalla_fons(BACKGROUND_IMAGE)
