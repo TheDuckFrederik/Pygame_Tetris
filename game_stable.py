@@ -17,8 +17,8 @@ def main_game():
     tiempo_accion = 100
     tiempo_ultima_accion = 0
     puntos = 0
-
-
+    phase = 1
+    rest = 25
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
                 [0,0,0,0,0,0,0,0,0,0],
@@ -362,7 +362,7 @@ def main_game():
             for b in range(min_x,min_x+talla_matriz):
                 temporal[a][b] = lista_pieza[a1][b1]
                 b1 += 1
-            a1 += 1game_latest.py
+            a1 += 1
 
         return comprobar_colision(temporal,tablero)
 
@@ -435,14 +435,40 @@ def main_game():
             time.sleep(3)
             break
         print(puntos)
-        if puntos >= 2:
-            temps_jugada = 300
-        if puntos >= 4:
-            temps_jugada = 275
-        if puntos >= 6:
-            temps_jugada = 250
-        if puntos >= 8:
-            temps_jugada = 225
-        if puntos >= 10:
-            temps_jugada = 200
-    #
+        #
+        if phase == 1:
+            rest = 13
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 275
+            if puntos >= 6:
+                temps_jugada = 250
+                phase = 2
+        #
+        if phase == 2:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 262
+            if puntos >= 6:
+                temps_jugada = 224
+                phase = 3
+        #
+        if phase == 3:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 237
+            if puntos >= 6:
+                temps_jugada = 174
+                phase = 4
+        #
+        if phase == 4:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 224
+            if puntos >= 6:
+                temps_jugada = 148
+                phase = 5

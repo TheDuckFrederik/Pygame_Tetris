@@ -17,7 +17,8 @@ def main_game():
     tiempo_accion = 100
     tiempo_ultima_accion = 0
     puntos = 0
-
+    phase = 1
+    rest = 25
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -401,7 +402,7 @@ def main_game():
                         copia_matriz(temporal,pieza)
                     tiempo_ultima_accion = current_time
                 elif event.key == K_DOWN:
-                    temps_ultima_jugada -= temps_jugada
+                    temps_ultima_jugada -= temps_jugada*2
                 elif event.key == K_UP:
                     try:
                         if not rotar():
@@ -435,14 +436,21 @@ def main_game():
             time.sleep(3)
             break
         print(puntos)
-        if puntos >= 2:
-            temps_jugada = 300
-        if puntos >= 4:
-            temps_jugada = 275
-        if puntos >= 6:
-            temps_jugada = 250
-        if puntos >= 8:
-            temps_jugada = 225
-        if puntos >= 10:
-            temps_jugada = 200
-    #
+        #
+        def phase_counter():
+            rest = 25
+            phase = 0
+            phase = puntos / 4
+            if phase >= 2:
+                phase_cnt = phase - 1
+                rest = 25 + (13 * phase_cnt)
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 300 - rest
+            if puntos >= 6:
+                temps_jugada = 300 - rest
+                phase += 1
+        #
+        phase_counter()
+        #
