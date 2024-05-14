@@ -64,7 +64,7 @@ def print_menu():
     pygame.draw.rect(transparent_area2, (0, 0, 0, 0), (0, 0, 526, 87))
     #
     screen.blit(transparent_area, (62, 377))
-    screen.blit(transparent_area2, (86, 23))
+    screen.blit(transparent_area2, (83, 23))
     #
     font = pygame.font.SysFont(None, 36)
     img1 = font.render("1 - Play", True, (255, 255, 255))
@@ -76,7 +76,7 @@ def print_menu():
     screen.blit(img2, (118, 427))
     screen.blit(img3, (362, 391))
     screen.blit(img4, (362, 427))
-    screen.blit(TETRIS, (87, 23))
+    screen.blit(TETRIS, (86, 23))
     #
     pygame.display.update()
 #
@@ -85,11 +85,13 @@ while True:
     # #
     # credit_animation('&', 315)
     #
-    credit_animation('Unai O. Pujol',220)
+    # credit_animation('Unai O. Pujol',220)
+    # #
+    # credit_animation('presenta:', 250)
+    # #
+    time.sleep(0.7)
     #
-    credit_animation('presenta:', 250)
-    #
-    tetris_animation(87)
+    tetris_animation(86)
     #
     break
 #

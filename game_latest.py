@@ -434,23 +434,24 @@ def main_game():
         if comprobar_arriba():
             imprimir_death(DEATH_SCREEN)
             time.sleep(3)
+            print('Phase: {}\nLineas: {}' .format(phase, puntos))
             break
-        print(puntos)
         #
         def phase_counter():
+            puntos_curr = 0
             rest = 25
             phase = 0
             phase = puntos / 4
+            #
             if phase >= 2:
                 phase_cnt = phase - 1
                 rest = 25 + (13 * phase_cnt)
-            if puntos >= 2:
+            if puntos_curr >= 2:
                 temps_jugada = 300
-            if puntos >= 4:
-                temps_jugada = 300 - rest
-            if puntos >= 6:
+            if puntos_curr >= 4:
                 temps_jugada = 300 - rest
                 phase += 1
+                puntos_curr = 0
         #
         phase_counter()
         #
