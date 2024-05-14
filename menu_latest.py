@@ -10,8 +10,9 @@ from hard_mode_latest import hard_mode
 #
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_2.png'
+END_TITLE = 'assets/background/menu_background_3.png'
 credit = ''
-boing = 'Xavi Sancho'
+boing = 'Raquel Vargas'
 x = 0
 #
 pygame.init()
@@ -41,25 +42,29 @@ def credit_animation(credit, x):
     time.sleep(0.7)
 #
 def tetris_animation(x):
-    print_screen_backround(BACKGROUND_IMAGE)
+    print_screen_backround(END_TITLE)
     pygame.display.update()
     #
     for i in range(178):
         time.sleep(0.02)
         #
-        print_screen_backround(BACKGROUND_IMAGE)
+        print_screen_backround(END_TITLE)
         screen.blit(TETRIS, (x, 200 - i))
         #
         pygame.display.update()
     #
     time.sleep(0.7)
 def print_menu():
-    print_screen_backround(BACKGROUND_IMAGE)
+    print_screen_backround(END_TITLE)
     #
     transparent_area = pygame.Surface((526, 87), pygame.SRCALPHA)
     pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 526, 87))
     #
+    transparent_area2 = pygame.Surface((480, 102), pygame.SRCALPHA)
+    pygame.draw.rect(transparent_area2, (0, 0, 0, 0), (0, 0, 526, 87))
+    #
     screen.blit(transparent_area, (62, 377))
+    screen.blit(transparent_area2, (86, 23))
     #
     font = pygame.font.SysFont(None, 36)
     img1 = font.render("1 - Play", True, (255, 255, 255))
@@ -71,6 +76,7 @@ def print_menu():
     screen.blit(img2, (118, 427))
     screen.blit(img3, (362, 391))
     screen.blit(img4, (362, 427))
+    screen.blit(TETRIS, (87, 23))
     #
     pygame.display.update()
 #
@@ -125,6 +131,10 @@ def tetris_menu():
             credit_animation('Ayuda ocasional:', 170)
             #
             credit_animation('Jan Vilaplana', 217)
+            #
+            credit_animation('Beta testes:', 170)
+            #
+            credit_animation('Raquel Vargas', 217)
             #
             time.sleep(0.5)
             pygame.display.update()
