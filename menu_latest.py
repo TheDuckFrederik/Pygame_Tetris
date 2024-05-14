@@ -17,6 +17,7 @@ x = 0
 pygame.init()
 screen = pygame.display.set_mode((HEIGHT, WIDTH))
 pygame.display.set_caption("Tetris")
+TETRIS = pygame.image.load('assets/peces/TETRIS/TETRIS.png')
 #
 def print_screen_backround(image):
     backround = pygame.image.load(image).convert()
@@ -39,13 +40,26 @@ def credit_animation(credit, x):
     #
     time.sleep(0.7)
 #
+def tetris_animation(x):
+    print_screen_backround(BACKGROUND_IMAGE)
+    pygame.display.update()
+    #
+    for i in range(178):
+        time.sleep(0.02)
+        #
+        print_screen_backround(BACKGROUND_IMAGE)
+        screen.blit(TETRIS, (x, 200 - i))
+        #
+        pygame.display.update()
+    #
+    time.sleep(0.7)
 def print_menu():
     print_screen_backround(BACKGROUND_IMAGE)
     #
-    transparent_area = pygame.Surface((255, 170), pygame.SRCALPHA)
-    pygame.draw.rect(transparent_area, (0, 0, 0, 100), (0, 0, 255, 170))
+    transparent_area = pygame.Surface((526, 87), pygame.SRCALPHA)
+    pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 526, 87))
     #
-    screen.blit(transparent_area, (210, 42))
+    screen.blit(transparent_area, (62, 377))
     #
     font = pygame.font.SysFont(None, 36)
     img1 = font.render("1 - Play", True, (255, 255, 255))
@@ -53,10 +67,10 @@ def print_menu():
     img3 = font.render("3 - Credits", True, (255, 255, 255))
     img4 = font.render("4 - Exit", True, (255, 255, 255))
     #
-    screen.blit(img1, (265, 50))
-    screen.blit(img2, (265, 90))
-    screen.blit(img3, (265, 130))
-    screen.blit(img4, (265, 170))
+    screen.blit(img1, (118, 391))
+    screen.blit(img2, (118, 427))
+    screen.blit(img3, (362, 391))
+    screen.blit(img4, (362, 427))
     #
     pygame.display.update()
 #
@@ -69,7 +83,7 @@ while True:
     #
     credit_animation('presenta:', 250)
     #
-    credit_animation('TETRIS', 260)
+    tetris_animation(87)
     #
     break
 #

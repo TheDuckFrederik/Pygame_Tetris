@@ -415,10 +415,10 @@ def hard_mode():
         if puntos >= 2:
             temps_jugada = 300
         if puntos >= 4:
-            temps_jugada = 200
+            temps_jugada = 275
         if puntos >= 6:
-            temps_jugada = 100
+            temps_jugada = 250
         if puntos >= 8:
-            temps_jugada = 50
+            temps_jugada = 225
         if puntos >= 10:
-            temps_jugada = 30
+            temps_jugada = 200

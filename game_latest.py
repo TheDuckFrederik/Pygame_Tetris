@@ -122,7 +122,7 @@ def main_game():
 
     pygame.init()
     pantalla = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
-    death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
+    # death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
     # CREAR LA SUPERFÍCIE TRANSPARENTE I EL RECTÁNGULO SOBRE ELLA:
     seccion_transparente = pygame.Surface((200,400),pygame.SRCALPHA)
     pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,400))
@@ -149,9 +149,31 @@ def main_game():
     def imprimir_death(image):
         # Imprimeixo imatge de fons:
         background = pygame.image.load(image).convert()
-        death.blit(background, (0, 0))
+        pantalla.blit(background, (0, 0))
+        pygame.display.update()
 
     # Esta función deja a cero la matriz pieza
+    def draw_next_shape(piece, surface):
+        font = pygame.font.SysFont(None, 52)
+        label = font.render('Next shape', 1, (255, 255, 255))
+
+        start_x = top_left_x + play_width + 50
+        start_y = top_left_y + (play_height / 2 - 100)
+
+        shape_format = piece.shape[piece.rotation % len(piece.shape)]
+
+        for i, line in enumerate(shape_format):
+            row = list(line)
+            for j, column in enumerate(row):
+                if column == '0':
+                    pygame.draw.rect(surface, piece.color,
+                                     (start_x + j * block_size, start_y + i * block_size, block_size, block_size), 0)
+
+        surface.blit(label, (start_x, start_y - 30))
+
+        # pygame.display.update()
+
+    # draws the content of the window
     def vaciar_pieza():
         pieza = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -409,6 +431,8 @@ def main_game():
                     puntos += comprobar_linea_entera()
                     pieza = elegir_pieza()
         if comprobar_arriba():
+            imprimir_death(DEATH_SCREEN)
+            time.sleep(3)
             break
         print(puntos)
         if puntos >= 2:
@@ -422,5 +446,3 @@ def main_game():
         if puntos >= 10:
             temps_jugada = 200
     #
-    imprimir_death(DEATH_SCREEN)
-    time.sleep(3)
