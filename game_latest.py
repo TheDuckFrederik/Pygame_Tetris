@@ -362,7 +362,7 @@ def main_game():
             for b in range(min_x,min_x+talla_matriz):
                 temporal[a][b] = lista_pieza[a1][b1]
                 b1 += 1
-            a1 += 1game_latest.py
+            a1 += 1
 
         return comprobar_colision(temporal,tablero)
 
