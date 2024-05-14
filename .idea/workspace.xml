@@ -4,30 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="159555bb-b9c7-4285-aee4-88474648b90a" name="Changes" comment="v.0.1.19">
-      <change afterPath="$PROJECT_DIR$/hard_mode_latest.py" afterDir="false" />
+    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.1.21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu_latest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ref_scripts/mutating_tetris.py" beforeDir="false" afterPath="$PROJECT_DIR$/ref_scripts/mutating_tetris.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -36,42 +22,31 @@
     &quot;assignee&quot;: &quot;UnOvPj&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/UnOvPj/Pygame_Tetris.git",
-    "accountId": "24b147ea-e5bb-4a92-b357-a2d2e7e73eaa"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UnOvPj/Pygame_Tetris.git&quot;,
+    &quot;accountId&quot;: &quot;f6c44c74-7456-418b-9814-26f744074e20&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2fUdlBdFueuVuqOy4Ko60TRdyKs" />
+  <component name="ProjectId" id="2gPDpUTzwEe8ajc8ubfutGYbqkT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1.executor": "Run",
-    "Python.Tetris.executor": "Run",
-    "Python.hard_mode_latest.executor": "Run",
-    "Python.latest_tetris_game.executor": "Run",
-    "Python.latest_tetris_menu.executor": "Run",
-    "Python.main_menu.executor": "Run",
-    "Python.menu_latest.executor": "Run",
-    "Python.mutating_tetris.executor": "Run",
-    "Python.stable.executor": "Run",
-    "Python.stable_tetris_menu.executor": "Run",
-    "Python.tetris_menu.executor": "Run",
-    "Python.versus.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "R&&D",
-    "last_opened_file_path": "C:/Users/Rach3/Downloads/tetris-pygame-master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.game_latest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.menu_latest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.menu_latest">
-    <configuration name="hard_mode_latest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="game_latest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tetris" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,51 +59,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hard_mode_latest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="latest_tetris_game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Tetris" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/latest_tetris_game.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="latest_tetris_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Tetris" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/latest_tetris_menu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game_latest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,35 +90,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mutating_tetris" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Tetris" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ref_scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ref_scripts/mutating_tetris.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.menu_latest" />
-        <item itemvalue="Python.hard_mode_latest" />
-        <item itemvalue="Python.latest_tetris_menu" />
-        <item itemvalue="Python.latest_tetris_game" />
-        <item itemvalue="Python.mutating_tetris" />
+        <item itemvalue="Python.game_latest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,269 +107,66 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="159555bb-b9c7-4285-aee4-88474648b90a" name="Changes" comment="" />
-      <created>1713854341188</created>
+      <changelist id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="" />
+      <created>1715590503605</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713854341188</updated>
+      <updated>1715590503605</updated>
     </task>
-    <task id="LOCAL-00001" summary="v.0.1.7">
+    <task id="LOCAL-00001" summary="v.0.1.20">
       <option name="closed" value="true" />
-      <created>1714467464372</created>
+      <created>1715590565813</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1714467464372</updated>
+      <updated>1715590565813</updated>
     </task>
-    <task id="LOCAL-00002" summary="v.0.1.7">
+    <task id="LOCAL-00002" summary="v.0.1.20">
       <option name="closed" value="true" />
-      <created>1714723188142</created>
+      <created>1715590575778</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1714723188142</updated>
+      <updated>1715590575778</updated>
     </task>
-    <task id="LOCAL-00003" summary="v.0.1.7">
+    <task id="LOCAL-00003" summary="v.0.1.20">
       <option name="closed" value="true" />
-      <created>1714723324711</created>
+      <created>1715591257915</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1714723324711</updated>
+      <updated>1715591257915</updated>
     </task>
-    <task id="LOCAL-00004" summary="v.0.1.7">
+    <task id="LOCAL-00004" summary="v.0.1.20">
       <option name="closed" value="true" />
-      <created>1714724915594</created>
+      <created>1715591410876</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1714724915594</updated>
+      <updated>1715591410876</updated>
     </task>
-    <task id="LOCAL-00005" summary="v.0.1.9">
+    <task id="LOCAL-00005" summary="v.0.1.20">
       <option name="closed" value="true" />
-      <created>1714724933142</created>
+      <created>1715594235884</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1714724933142</updated>
+      <updated>1715594235884</updated>
     </task>
-    <task id="LOCAL-00006" summary="v.0.1.10">
+    <task id="LOCAL-00006" summary="v.0.1.21">
       <option name="closed" value="true" />
-      <created>1714725047219</created>
+      <created>1715684296054</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1714725047219</updated>
+      <updated>1715684296054</updated>
     </task>
-    <task id="LOCAL-00007" summary="v.0.1.10">
-      <option name="closed" value="true" />
-      <created>1714985750666</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1714985750666</updated>
-    </task>
-    <task id="LOCAL-00008" summary="v.0.1.11">
-      <option name="closed" value="true" />
-      <created>1714986502013</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1714986502013</updated>
-    </task>
-    <task id="LOCAL-00009" summary="v.0.1.11">
-      <option name="closed" value="true" />
-      <created>1714986551350</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1714986551350</updated>
-    </task>
-    <task id="LOCAL-00010" summary="v.0.1.12">
-      <option name="closed" value="true" />
-      <created>1714986919324</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1714986919324</updated>
-    </task>
-    <task id="LOCAL-00011" summary="v.0.1.12">
-      <option name="closed" value="true" />
-      <created>1714986950426</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1714986950426</updated>
-    </task>
-    <task id="LOCAL-00012" summary="v.0.1.12">
-      <option name="closed" value="true" />
-      <created>1714987297242</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1714987297242</updated>
-    </task>
-    <task id="LOCAL-00013" summary="v.0.1.13">
-      <option name="closed" value="true" />
-      <created>1714987322836</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1714987322836</updated>
-    </task>
-    <task id="LOCAL-00014" summary="v.0.1.13">
-      <option name="closed" value="true" />
-      <created>1714987570701</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1714987570701</updated>
-    </task>
-    <task id="LOCAL-00015" summary="v.0.1.14">
-      <option name="closed" value="true" />
-      <created>1714991327214</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1714991327214</updated>
-    </task>
-    <task id="LOCAL-00016" summary="v.0.1.14">
-      <option name="closed" value="true" />
-      <created>1714991351006</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1714991351006</updated>
-    </task>
-    <task id="LOCAL-00017" summary="v.0.1.14">
-      <option name="closed" value="true" />
-      <created>1714991379931</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1714991379932</updated>
-    </task>
-    <task id="LOCAL-00018" summary="v.0.1.16">
-      <option name="closed" value="true" />
-      <created>1715067514076</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1715067514076</updated>
-    </task>
-    <task id="LOCAL-00019" summary="v.0.1.16">
-      <option name="closed" value="true" />
-      <created>1715067755273</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1715067755273</updated>
-    </task>
-    <task id="LOCAL-00020" summary="v.0.1.16">
-      <option name="closed" value="true" />
-      <created>1715081901764</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1715081901764</updated>
-    </task>
-    <task id="LOCAL-00021" summary="v.0.1.17">
-      <option name="closed" value="true" />
-      <created>1715154244876</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1715154244876</updated>
-    </task>
-    <task id="LOCAL-00022" summary="v.0.1.18">
-      <option name="closed" value="true" />
-      <created>1715155726630</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1715155726630</updated>
-    </task>
-    <task id="LOCAL-00023" summary="v.0.1.18">
-      <option name="closed" value="true" />
-      <created>1715156869512</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1715156869512</updated>
-    </task>
-    <task id="LOCAL-00024" summary="v.0.1.18">
-      <option name="closed" value="true" />
-      <created>1715326829379</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1715326829379</updated>
-    </task>
-    <task id="LOCAL-00025" summary="v.0.1.18">
-      <option name="closed" value="true" />
-      <created>1715326841015</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1715326841015</updated>
-    </task>
-    <task id="LOCAL-00026" summary="v.0.1.19">
-      <option name="closed" value="true" />
-      <created>1715380401638</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1715380401638</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="test" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v.0.1.7" />
-    <MESSAGE value="v.0.1.9" />
-    <MESSAGE value="v.0.1.10" />
-    <MESSAGE value="v.0.1.11" />
-    <MESSAGE value="v.0.1.12" />
-    <MESSAGE value="v.0.1.13" />
-    <MESSAGE value="v.0.1.14" />
-    <MESSAGE value="v.0.1.16" />
-    <MESSAGE value="v.0.1.17" />
-    <MESSAGE value="v.0.1.18" />
-    <MESSAGE value="v.0.1.19" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.1.19" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="v.0.1.20" />
+    <MESSAGE value="v.0.1.21" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.1.21" />
   </component>
 </project>
