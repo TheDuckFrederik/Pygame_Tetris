@@ -437,21 +437,17 @@ def main_game():
             print('Phase: {}\nLineas: {}' .format(phase, puntos))
             break
         #
-        def phase_counter():
-            puntos_curr = 0
-            rest = 25
-            phase = 0
-            phase = puntos / 4
-            #
-            if phase >= 2:
-                phase_cnt = phase - 1
-                rest = 25 + (13 * phase_cnt)
-            if puntos_curr >= 2:
+        def phase_counter(x, y, z):
+            if x >= 2:
+                phase_cnt = x
+                z = 25 + (13 * phase_cnt)
+            if y >= 2:
                 temps_jugada = 300
-            if puntos_curr >= 4:
-                temps_jugada = 300 - rest
-                phase += 1
-                puntos_curr = 0
+            if y >= 4:
+                temps_jugada = 300 - z
+                x += 1
+                y = 0
+            print(x)
         #
-        phase_counter()
+        phase_counter(phase, puntos, rest)
         #
