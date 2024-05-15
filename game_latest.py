@@ -17,7 +17,9 @@ def main_game():
     tiempo_accion = 100
     tiempo_ultima_accion = 0
     puntos = 0
-
+    phase = 1
+    rest = 25
+    points = puntos * 15
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -401,7 +403,7 @@ def main_game():
                         copia_matriz(temporal,pieza)
                     tiempo_ultima_accion = current_time
                 elif event.key == K_DOWN:
-                    temps_ultima_jugada -= temps_jugada
+                    temps_ultima_jugada -= temps_jugada*2
                 elif event.key == K_UP:
                     try:
                         if not rotar():
@@ -433,16 +435,27 @@ def main_game():
         if comprobar_arriba():
             imprimir_death(DEATH_SCREEN)
             time.sleep(3)
+            print('Points: {}\nLineas: {}' .format(points, puntos))
             break
-        print(puntos)
-        if puntos >= 2:
+        #
+        # def phase_counter(x, y, z):
+        #     if x >= 2:
+        #         phase_cnt = x
+        #         z = 25 + (13 * phase_cnt)
+        #     if y >= 2:
+        #         temps_jugada = 300
+        #     if y >= 4:
+        #         temps_jugada = 300 - z
+        #         x += 1
+        #         y = 0
+        #     print(x)
+        # #
+        # phase_counter(phase, puntos, rest)
+        #
+        def score():
+            bef_points = 0
             temps_jugada = 300
-        if puntos >= 4:
-            temps_jugada = 275
-        if puntos >= 6:
-            temps_jugada = 250
-        if puntos >= 8:
-            temps_jugada = 225
-        if puntos >= 10:
-            temps_jugada = 200
-    #
+            if bef_points != puntos:
+                temps_jugada -= 25
+                bef_points += 1
+        #
