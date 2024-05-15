@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.2">
+    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_latest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +22,12 @@
     &quot;assignee&quot;: &quot;UnOvPj&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/UnOvPj/Pygame_Tetris.git&quot;,
-    &quot;accountId&quot;: &quot;f6c44c74-7456-418b-9814-26f744074e20&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UnOvPj/Pygame_Tetris.git",
+    "accountId": "24b147ea-e5bb-4a92-b357-a2d2e7e73eaa"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -36,14 +37,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.game_latest.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.menu_latest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;test&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.game_latest.executor": "Debug",
+    "Python.menu_latest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "R&&D"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.menu_latest">
     <configuration name="game_latest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tetris" />
@@ -280,16 +281,24 @@
       <option name="project" value="LOCAL" />
       <updated>1715771295478</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="v.0.2.3">
+      <option name="closed" value="true" />
+      <created>1715785852285</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715785852285</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v.0.1.20" />
     <MESSAGE value="v.0.1.21" />
     <MESSAGE value="v.0.1.22" />
-    <MESSAGE value="v.0.2.3" />
     <MESSAGE value="v.0.2.1" />
     <MESSAGE value="v.0.2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.2.2" />
+    <MESSAGE value="v.0.2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.2.3" />
   </component>
 </project>

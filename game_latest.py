@@ -466,37 +466,13 @@ def main_game():
                 print('Points: {}\nLineas: {}' .format(points, puntos))
                 print(temps_jugada)
                 break
-            #
-            # def phase_counter(x, y, z):
-            #     if x >= 2:
-            #         phase_cnt = x
-            #         z = 25 + (13 * phase_cnt)
-            #     if y >= 2:
-            #         temps_jugada = 300
-            #     if y >= 4:
-            #         temps_jugada = 300 - z
-            #         x += 1
-            #         y = 0
-            #     print(x)
-            # #
-            # phase_counter(phase, puntos, rest)
-            #
-            def score(bef_puntos, temps_jugada):
-                aug = 45
-                if phase >= 2:
-                    aug = 45 + (15 * phase)
-                if bef_puntos != puntos:
-                    temps_jugada = 300 - (aug * puntos)
-                    bef_puntos += 1
-                return temps_jugada, bef_puntos
-            #
-            # def phase_calc(phase, puntos, bef_puntos):
-            #     def_phase = 0
-            #     if def_phase != phase:
-            #         puntos = 0
-            #         bef_puntos = 0
-            #     return phase, bef_puntos, puntos
-            temps_jugada = score(bef_puntos, temps_jugada)
-            # bef_puntos = phase_calc(phase, puntos, bef_puntos)
-            # puntos = phase_calc(phase, puntos, bef_puntos)
-            points = puntos * 15
+                #
+                def score(bef_puntos, temps_jugada):
+                    if bef_puntos != puntos:
+                        temps_jugada = 300 - (45 * puntos)
+                        bef_puntos += 1
+                    return temps_jugada
+
+                #
+                temps_jugada = score(bef_puntos, temps_jugada)
+                points = puntos * 15
