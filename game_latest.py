@@ -136,6 +136,8 @@ def main_game():
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
     PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
+    NEW_GAME_SCREEN = 'assets/background/New_Game_Screen.png'
+    EXIT_MENU_SCREEN = 'assets/background/Exit_Menu_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -479,9 +481,13 @@ def main_game():
                 print(temps_jugada)
                 break
             if new_game == True:
+                imprimir_death(NEW_GAME_SCREEN)
+                time.sleep(3)
                 main_game()
                 break
             if back_to_menu == True:
+                imprimir_death(EXIT_MENU_SCREEN)
+                time.sleep(3)
                 break
             #
             def score(bef_puntos, temps_jugada):
