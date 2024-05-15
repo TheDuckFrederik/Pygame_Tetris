@@ -419,6 +419,8 @@ def main_game():
                             tiempo_ultima_accion = current_time
                         except:
                             pass
+        if pause == True:
+            imprimir_death(PAUSE_SCREEN)
         if not pause:
             vista = crear_vista(vista,tablero,pieza)
             #Imprimir gráficos:
