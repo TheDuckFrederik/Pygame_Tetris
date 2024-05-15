@@ -339,14 +339,14 @@ def main_game():
         #
         pantalla.blit(transparent_area, (340, 40))
         #
-        font = pygame.font.SysFont(None, 24)
+        font = pygame.font.SysFont(None, 32)
         img1 = font.render(("Score: {}".format(points)), True, (255, 255, 255))
         img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
         img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
         #
-        pantalla.blit(img1, (385, 47))
-        pantalla.blit(img2, (385, 87))
-        pantalla.blit(img3, (385, 127))
+        pantalla.blit(img1, (345, 66))
+        pantalla.blit(img2, (345, 125))
+        pantalla.blit(img3, (345, 184))
         #
     #
     # Esta función gira 90 grados la pieza que está bajando
