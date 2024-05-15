@@ -457,7 +457,8 @@ def main_game():
             bef_puntos = 0
             temps_jugada = 300
             if bef_puntos != puntos:
-                temps_jugada -= 25
+                temps_jugada = 300 - (100 * puntos)
                 bef_puntos += 1
         #
         score()
+        points = puntos * 15
