@@ -133,7 +133,7 @@ def main_game():
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
-    PAUSE_SCREEN = 'assets/background/Death_Screen.png'
+    PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
