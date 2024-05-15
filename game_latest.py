@@ -18,7 +18,7 @@ def main_game():
     tiempo_ultima_accion = 0
     puntos = 0
     phase = 1
-    rest = 25
+    rest = 10
     points = puntos * 10
     pause = False
     bef_puntos = 0
@@ -492,10 +492,24 @@ def main_game():
             #
             def score(bef_puntos, temps_jugada):
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (15 * puntos)
+                    temps_jugada = 300 - (rest * puntos)
                     bef_puntos += 1
                 return temps_jugada
             #
             temps_jugada = score(bef_puntos, temps_jugada)
+            rest = score(bef_puntos, temps_jugada)
             points = puntos * 10
             #
+            # def phase_evolve(phase, puntos, rest, bef_puntos):
+            #     if puntos >= 6:
+            #         phase += 1
+            #         puntos = 0
+            #         bef_puntos = 0
+            #         rest += 5
+            #     return puntos, phase, rest, bef_puntos
+            # #
+            # puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # rest = phase_evolve(phase, puntos, rest, bef_puntos)
+            # phase = phase_evolve(phase, puntos, rest, bef_puntos)
+            # bef_puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # #

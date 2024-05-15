@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_latest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715806145097</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="v.0.2.7">
+      <option name="closed" value="true" />
+      <created>1715808013123</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1715808013123</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
