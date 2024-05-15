@@ -388,6 +388,7 @@ def main_game():
     pieza = elegir_pieza()
     #
     while not (salir):
+        keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -403,7 +404,7 @@ def main_game():
                         copia_matriz(temporal,pieza)
                     tiempo_ultima_accion = current_time
                 elif event.key == K_DOWN:
-                    temps_ultima_jugada -= temps_jugada*2
+                    temps_ultima_jugada -= temps_jugada
                 elif event.key == K_UP:
                     try:
                         if not rotar():
@@ -411,6 +412,10 @@ def main_game():
                         tiempo_ultima_accion = current_time
                     except:
                         pass
+                if keys[K_p]:
+                    while True:
+                        if event.key == K_p:
+                            break
         #
         vista = crear_vista(vista,tablero,pieza)
         #Imprimir gráficos:
