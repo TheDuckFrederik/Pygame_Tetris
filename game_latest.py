@@ -337,7 +337,7 @@ def main_game():
     def print_score():
         #
         transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
-        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
+        pygame.draw.rect(transparent_area, (0, 0, 0, 0), (0, 0, 248, 164))
         #
         pantalla.blit(transparent_area, (340, 40))
         #
