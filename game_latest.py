@@ -20,6 +20,7 @@ def main_game():
     phase = 1
     rest = 25
     points = puntos * 15
+    pause = False
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -131,6 +132,7 @@ def main_game():
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
+    PAUSE_SCREEN = 'assets/background/Death_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -386,7 +388,7 @@ def main_game():
 
     salir = False
     pieza = elegir_pieza()
-    #
+    pause = False
     while not (salir):
         keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
@@ -394,9 +396,8 @@ def main_game():
             if event.type == pygame.QUIT:
                 pygame.quit()
             if keys[K_p]:
-                while True:
-                    if keys[K_p]:
-                        break
+                pause = not pause
+                print('pausa')
             if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
                 if event.key == K_LEFT:
                     if mover_izquierda():
