@@ -348,7 +348,6 @@ def main_game():
         pantalla.blit(img2, (385, 87))
         pantalla.blit(img3, (385, 127))
         #
-        pygame.display.update()
     #
     # Esta función gira 90 grados la pieza que está bajando
     def rotar():
@@ -411,10 +410,15 @@ def main_game():
     pieza = elegir_pieza()
     pause = False
     print_score()
+    pygame.display.update()
+    #
     while not (salir):
         keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
+            #
+            print_score()
+            #
             if event.type == pygame.QUIT:
                 pygame.quit()
             #
@@ -426,6 +430,7 @@ def main_game():
                 pause = not pause
                 # print(pause)
             if not pause:
+                #
                 if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
                     if event.key == K_LEFT:
                         if mover_izquierda():
@@ -479,8 +484,6 @@ def main_game():
                 break
             if back_to_menu == True:
                 break
-            #
-            print_score()
             #
             def score(bef_puntos, temps_jugada):
                 if bef_puntos != puntos:
