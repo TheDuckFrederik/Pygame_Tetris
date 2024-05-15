@@ -19,6 +19,9 @@ def main_game():
     puntos = 0
     phase = 1
     rest = 25
+    points = puntos * 10
+    pause = False
+    bef_puntos = 0
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -130,6 +133,7 @@ def main_game():
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
+    PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -265,7 +269,25 @@ def main_game():
                     elif vista[fila][pos] == 7:
                         pantalla.blit(pink_tile, (100 + x, y))
 
+    def print_score():
+        #
+        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
+        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
+        #
+        pantalla.blit(transparent_area, (380, 44))
+        #
+        font = pygame.font.SysFont(None, 24)
+        img1 = font.render(("Score: {}" .format(points)), True, (255, 255, 255))
+        img2 = font.render(("Lines: {}" .format(puntos)), True, (255, 255, 255))
+        img3 = font.render(("Phase: {}" .format(phase)), True, (255, 255, 255))
+        #
+        pantalla.blit(img1, (118, 391))
+        pantalla.blit(img2, (118, 427))
+        pantalla.blit(img3, (362, 391))
+        #
+        pygame.display.update()
 
+    #
 
 
 
@@ -385,69 +407,96 @@ def main_game():
 
     salir = False
     pieza = elegir_pieza()
-    #
+    pause = False
     while not (salir):
+        keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-            if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
-                if event.key == K_LEFT:
-                    if mover_izquierda():
-                        copia_matriz(temporal, pieza)
-                    tiempo_ultima_accion = current_time
+            if keys[K_p]:
+                pause = not pause
+                print(pause)
+            if not pause:
+                if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
+                    if event.key == K_LEFT:
+                        if mover_izquierda():
+                            copia_matriz(temporal, pieza)
+                        tiempo_ultima_accion = current_time
 
-                elif event.key == K_RIGHT:
-                    if mover_derecha():
-                        copia_matriz(temporal,pieza)
-                    tiempo_ultima_accion = current_time
-                elif event.key == K_DOWN:
-                    temps_ultima_jugada -= temps_jugada*2
-                elif event.key == K_UP:
-                    try:
-                        if not rotar():
+                    elif event.key == K_RIGHT:
+                        if mover_derecha():
                             copia_matriz(temporal,pieza)
                         tiempo_ultima_accion = current_time
-                    except:
-                        pass
-        #
-        vista = crear_vista(vista,tablero,pieza)
-        #Imprimir gráficos:
-        imprimir_pantalla_fons(BACKGROUND_IMAGE)
-        pantalla.blit(seccion_transparente, (100, 40))
-        imprimir_piezas()
-        pygame.display.update()
-        clock.tick(fps)
-        current_time = pygame.time.get_ticks()
-        if comprobar_llega_abajo():
-            copia_matriz(vista, tablero)
-            puntos += comprobar_linea_entera()
-            pieza = elegir_pieza()
-        else:
-            if current_time -  temps_ultima_jugada > temps_jugada:
-                temps_ultima_jugada = current_time
-                bajar_pieza()
-                if comprobar_colision(pieza,tablero):
-                    copia_matriz(vista, tablero)
-                    puntos += comprobar_linea_entera()
-                    pieza = elegir_pieza()
-        if comprobar_arriba():
-            imprimir_death(DEATH_SCREEN)
-            time.sleep(3)
-            print('Phase: {}\nLineas: {}' .format(phase, puntos))
-            break
-        #
-        def phase_counter(x, y, z):
-            if x >= 2:
-                phase_cnt = x
-                z = 25 + (13 * phase_cnt)
-            if y >= 2:
-                temps_jugada = 300
-            if y >= 4:
-                temps_jugada = 300 - z
-                x += 1
-                y = 0
-            print(x)
-        #
-        phase_counter(phase, puntos, rest)
-        #
+                    elif event.key == K_DOWN:
+                        temps_ultima_jugada -= temps_jugada
+                    elif event.key == K_UP:
+                        try:
+                            if not rotar():
+                                copia_matriz(temporal,pieza)
+                            tiempo_ultima_accion = current_time
+                        except:
+                            pass
+        if pause == True:
+            imprimir_death(PAUSE_SCREEN)
+        if not pause:
+            vista = crear_vista(vista,tablero,pieza)
+            #Imprimir gráficos:
+            imprimir_pantalla_fons(BACKGROUND_IMAGE)
+            pantalla.blit(seccion_transparente, (100, 40))
+            imprimir_piezas()
+            pygame.display.update()
+            clock.tick(fps)
+            current_time = pygame.time.get_ticks()
+            if comprobar_llega_abajo():
+                copia_matriz(vista, tablero)
+                puntos += comprobar_linea_entera()
+                pieza = elegir_pieza()
+            else:
+                if current_time - temps_ultima_jugada > temps_jugada:
+                    temps_ultima_jugada = current_time
+                    bajar_pieza()
+                    if comprobar_colision(pieza,tablero):
+                        copia_matriz(vista, tablero)
+                        puntos += comprobar_linea_entera()
+                        pieza = elegir_pieza()
+            if comprobar_arriba():
+                imprimir_death(DEATH_SCREEN)
+                time.sleep(3)
+                print('Points: {}\nLineas: {}' .format(points, puntos))
+                print(temps_jugada)
+                break
+            #
+            # def phase_counter(x, y, z):
+            #     if x >= 2:
+            #         phase_cnt = x
+            #         z = 25 + (13 * phase_cnt)
+            #     if y >= 2:
+            #         temps_jugada = 300
+            #     if y >= 4:
+            #         temps_jugada = 300 - z
+            #         x += 1
+            #         y = 0
+            #     print(x)
+            # #
+            # phase_counter(phase, puntos, rest)
+            #
+            def score(bef_puntos, temps_jugada):
+                aug = 45
+                if phase >= 2:
+                    aug = 45 + (15 * phase)
+                if bef_puntos != puntos:
+                    temps_jugada = 300 - (aug * puntos)
+                    bef_puntos += 1
+                return temps_jugada, bef_puntos
+            #
+            # def phase_calc(phase, puntos, bef_puntos):
+            #     def_phase = 0
+            #     if def_phase != phase:
+            #         puntos = 0
+            #         bef_puntos = 0
+            #     return phase, bef_puntos, puntos
+            temps_jugada = score(bef_puntos, temps_jugada)
+            # bef_puntos = phase_calc(phase, puntos, bef_puntos)
+            # puntos = phase_calc(phase, puntos, bef_puntos)
+            points = puntos * 15

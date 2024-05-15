@@ -42,9 +42,10 @@ def credit_animation(credit, x):
     time.sleep(0.7)
 #
 def tetris_animation(x):
-    print_screen_backround(END_TITLE)
+    print_screen_backround(BACKGROUND_IMAGE)
     pygame.display.update()
     #
+    time.sleep(0.7)
     for i in range(178):
         time.sleep(0.02)
         #
@@ -89,8 +90,6 @@ while True:
     # #
     # credit_animation('presenta:', 250)
     # #
-    time.sleep(0.7)
-    #
     tetris_animation(86)
     #
     break
