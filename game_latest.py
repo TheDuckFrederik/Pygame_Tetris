@@ -475,7 +475,7 @@ def main_game():
             if comprobar_arriba():
                 imprimir_death(DEATH_SCREEN)
                 time.sleep(3)
-                print('Points: {}\nLineas: {}' .format(points, puntos))
+                print('Score: {}\nLines: {}' .format(points, puntos))
                 print(temps_jugada)
                 break
             if new_game == True:
@@ -486,7 +486,7 @@ def main_game():
             #
             def score(bef_puntos, temps_jugada):
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (25 * puntos)
+                    temps_jugada = 300 - (15 * puntos)
                     bef_puntos += 1
                 return temps_jugada
             #
