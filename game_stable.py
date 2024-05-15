@@ -4,7 +4,7 @@ import time
 import numpy as np
 import pygame
 from pygame.locals import *
-def hard_mode():
+def main_game():
     # El tablero tiene 22 posiciones de alto, 2 fuera del tablero de juego propiamente dicho y 20 efectivas.
     ALTO = 22
     ANCHO = 10
@@ -17,8 +17,8 @@ def hard_mode():
     tiempo_accion = 100
     tiempo_ultima_accion = 0
     puntos = 0
-
-
+    phase = 1
+    rest = 25
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
                 [0,0,0,0,0,0,0,0,0,0],
@@ -328,44 +328,43 @@ def hard_mode():
     # Esta función gira 90 grados la pieza que está bajando
     def rotar():
         puede_rotar = True
-        min_x = ALTO
+        min_x = ANCHO
         min_y = ALTO
         max_x = 0
         max_y = 0
         for a in range(0, ALTO):
             for b in range(0, ANCHO):
                 if pieza[a][b] > 0:
-                    if b < min_y:
-                        min_y = b
-                    if a < min_x:
-                        min_x = a
-                    if a > max_x:
-                        max_x = a
+                    if a < min_y:
+                        min_y = a
+                    if b < min_x:
+                        min_x = b
+                    if b > max_x:
+                        max_x = b
                     if a > max_y:
                         max_y = a
         talla_matriz = 3
-        if max_x - min_x >= 3 or max_y - min_y >= 3:
+        if max_x - min_x >=3 or max_y - min_y >= 3:
             talla_matriz = 4
         lista_pieza = []
-        for a in range(min_y, min_y + talla_matriz):
+        for a in range(min_y,min_y+talla_matriz):
             lista_inicial = []
-            for b in range(min_x, min_x + talla_matriz):
+            for b in range(min_x,min_x+talla_matriz):
                 lista_inicial.append(pieza[a][b])
             lista_pieza.append(lista_inicial)
         lista_pieza = np.array(lista_pieza)
         lista_pieza = np.rot90(lista_pieza)
         vaciar_pieza()
-        copia_matriz(pieza, temporal)
+        copia_matriz(pieza,temporal)
         a1 = 0
-        for a in range(min_y, min_y + talla_matriz):
+        for a in range(min_y,min_y+talla_matriz):
             b1 = 0
-            for b in range(min_x, min_x + talla_matriz):
+            for b in range(min_x,min_x+talla_matriz):
                 temporal[a][b] = lista_pieza[a1][b1]
                 b1 += 1
             a1 += 1
 
-        return comprobar_colision(temporal, tablero)
-
+        return comprobar_colision(temporal,tablero)
 
     # Esta función comprueba si hay alguna línea llena, si es así la quita de tablero, añade una fila arriba y suma un punto por fila
     def comprobar_linea_entera():
@@ -436,14 +435,40 @@ def hard_mode():
             time.sleep(3)
             break
         print(puntos)
-        if puntos >= 2:
-            temps_jugada = 300
-        if puntos >= 4:
-            temps_jugada = 275
-        if puntos >= 6:
-            temps_jugada = 250
-        if puntos >= 8:
-            temps_jugada = 225
-        if puntos >= 10:
-            temps_jugada = 200
-    #
+        #
+        if phase == 1:
+            rest = 13
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 275
+            if puntos >= 6:
+                temps_jugada = 250
+                phase = 2
+        #
+        if phase == 2:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 262
+            if puntos >= 6:
+                temps_jugada = 224
+                phase = 3
+        #
+        if phase == 3:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 237
+            if puntos >= 6:
+                temps_jugada = 174
+                phase = 4
+        #
+        if phase == 4:
+            if puntos >= 2:
+                temps_jugada = 300
+            if puntos >= 4:
+                temps_jugada = 224
+            if puntos >= 6:
+                temps_jugada = 148
+                phase = 5

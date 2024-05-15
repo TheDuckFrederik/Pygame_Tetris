@@ -436,6 +436,7 @@ def main_game():
             imprimir_death(DEATH_SCREEN)
             time.sleep(3)
             print('Points: {}\nLineas: {}' .format(points, puntos))
+            print(temps_jugada)
             break
         #
         # def phase_counter(x, y, z):
@@ -453,9 +454,10 @@ def main_game():
         # phase_counter(phase, puntos, rest)
         #
         def score():
-            bef_points = 0
+            bef_puntos = 0
             temps_jugada = 300
-            if bef_points != puntos:
+            if bef_puntos != puntos:
                 temps_jugada -= 25
-                bef_points += 1
+                bef_puntos += 1
         #
+        score()
