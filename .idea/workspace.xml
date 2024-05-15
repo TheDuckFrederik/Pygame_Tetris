@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.4">
       <change beforePath="$PROJECT_DIR$/game_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_latest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_stable.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_stable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu_stable.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu_stable.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715787793322</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="v.0.2.4">
+      <option name="closed" value="true" />
+      <created>1715791874182</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715791874182</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -333,6 +338,7 @@
     <MESSAGE value="v.0.2.1" />
     <MESSAGE value="v.0.2.2" />
     <MESSAGE value="v.0.2.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.2.3" />
+    <MESSAGE value="v.0.2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.2.4" />
   </component>
 </project>

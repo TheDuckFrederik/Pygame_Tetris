@@ -345,8 +345,8 @@ def main_game():
         img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
         #
         pantalla.blit(img1, (385, 47))
-        pantalla.blit(img2, (118, 427))
-        pantalla.blit(img3, (362, 391))
+        pantalla.blit(img2, (385, 87))
+        pantalla.blit(img3, (385, 127))
         #
         pygame.display.update()
     #
@@ -480,12 +480,14 @@ def main_game():
             if back_to_menu == True:
                 break
             #
+            print_score()
+            #
             def score(bef_puntos, temps_jugada):
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (45 * puntos)
+                    temps_jugada = 300 - (25 * puntos)
                     bef_puntos += 1
                 return temps_jugada
             #
             temps_jugada = score(bef_puntos, temps_jugada)
-            points = puntos * 15
+            points = puntos * 10
             #
