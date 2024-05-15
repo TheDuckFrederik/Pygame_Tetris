@@ -393,6 +393,10 @@ def main_game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+            if keys[K_p]:
+                while True:
+                    if keys[K_p]:
+                        break
             if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
                 if event.key == K_LEFT:
                     if mover_izquierda():
@@ -412,10 +416,6 @@ def main_game():
                         tiempo_ultima_accion = current_time
                     except:
                         pass
-                if keys[K_p]:
-                    while True:
-                        if event.key == K_p:
-                            break
         #
         vista = crear_vista(vista,tablero,pieza)
         #Imprimir gráficos:
