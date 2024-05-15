@@ -337,7 +337,7 @@ def main_game():
         transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
         pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
         #
-        pantalla.blit(transparent_area, (380, 44))
+        pantalla.blit(transparent_area, (340, 40))
         #
         font = pygame.font.SysFont(None, 24)
         img1 = font.render(("Score: {}".format(points)), True, (255, 255, 255))
@@ -409,8 +409,6 @@ def main_game():
     salir = False
     pieza = elegir_pieza()
     pause = False
-    print_score()
-    pygame.display.update()
     #
     while not (salir):
         keys = pygame.key.get_pressed()
@@ -458,6 +456,7 @@ def main_game():
             imprimir_pantalla_fons(BACKGROUND_IMAGE)
             pantalla.blit(seccion_transparente, (100, 40))
             imprimir_piezas()
+            print_score()
             pygame.display.update()
             clock.tick(fps)
             current_time = pygame.time.get_ticks()
