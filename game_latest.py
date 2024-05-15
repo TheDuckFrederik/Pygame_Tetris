@@ -346,9 +346,9 @@ def main_game():
         img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
         img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
         #
-        pantalla.blit(img1, (345, 66))
-        pantalla.blit(img2, (345, 125))
-        pantalla.blit(img3, (345, 184))
+        pantalla.blit(img1, (345, 53))
+        pantalla.blit(img2, (345, 112))
+        pantalla.blit(img3, (345, 171))
         #
     #
     # Esta función gira 90 grados la pieza que está bajando
