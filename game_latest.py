@@ -492,7 +492,7 @@ def main_game():
             #
             def score(bef_puntos, temps_jugada):
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (rest * puntos)
+                    temps_jugada = 300 - (10 * puntos)
                     bef_puntos += 1
                 return temps_jugada
             #
