@@ -131,7 +131,7 @@ def main_game():
     # death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
     # CREAR LA SUPERFÍCIE TRANSPARENTE I EL RECTÁNGULO SOBRE ELLA:
     seccion_transparente = pygame.Surface((200,400),pygame.SRCALPHA)
-    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,400))
+    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,0))####400
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
@@ -346,9 +346,9 @@ def main_game():
         img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
         img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
         #
-        pantalla.blit(img1, (345, 53))
-        pantalla.blit(img2, (345, 112))
-        pantalla.blit(img3, (345, 171))
+        pantalla.blit(img1, (350, 53))
+        pantalla.blit(img2, (350, 112))
+        pantalla.blit(img3, (350, 171))
         #
     #
     # Esta función gira 90 grados la pieza que está bajando

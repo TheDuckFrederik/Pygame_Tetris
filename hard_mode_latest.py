@@ -17,7 +17,13 @@ def hard_mode():
     tiempo_accion = 100
     tiempo_ultima_accion = 0
     puntos = 0
-
+    phase = 1
+    rest = 10
+    points = puntos * 10
+    pause = False
+    bef_puntos = 0
+    new_game = False
+    back_to_menu = False
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -125,10 +131,13 @@ def hard_mode():
     # death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
     # CREAR LA SUPERFÍCIE TRANSPARENTE I EL RECTÁNGULO SOBRE ELLA:
     seccion_transparente = pygame.Surface((200,400),pygame.SRCALPHA)
-    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,400))
+    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,0))####400
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
+    PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
+    NEW_GAME_SCREEN = 'assets/background/New_Game_Screen.png'
+    EXIT_MENU_SCREEN = 'assets/background/Exit_Menu_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -324,7 +333,24 @@ def hard_mode():
                 temporal[a].insert(0,0)
             puede_mover = not comprobar_colision(temporal, tablero)
         return puede_mover
-
+    #
+    def print_score():
+        #
+        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
+        pygame.draw.rect(transparent_area, (0, 0, 0, 0), (0, 0, 248, 164))
+        #
+        pantalla.blit(transparent_area, (340, 40))
+        #
+        font = pygame.font.SysFont(None, 32)
+        img1 = font.render(("Score: {}".format(points)), True, (255, 255, 255))
+        img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
+        img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
+        #
+        pantalla.blit(img1, (350, 53))
+        pantalla.blit(img2, (350, 112))
+        pantalla.blit(img3, (350, 171))
+        #
+    #
     # Esta función gira 90 grados la pieza que está bajando
     def rotar():
         puede_rotar = True
@@ -366,7 +392,6 @@ def hard_mode():
 
         return comprobar_colision(temporal, tablero)
 
-
     # Esta función comprueba si hay alguna línea llena, si es así la quita de tablero, añade una fila arriba y suma un punto por fila
     def comprobar_linea_entera():
         puntos = 0
@@ -385,65 +410,106 @@ def hard_mode():
 
     salir = False
     pieza = elegir_pieza()
+    pause = False
     #
     while not (salir):
+        keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
+            #
+            print_score()
+            #
             if event.type == pygame.QUIT:
                 pygame.quit()
-            if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
-                if event.key == K_LEFT:
-                    if mover_izquierda():
-                        copia_matriz(temporal, pieza)
-                    tiempo_ultima_accion = current_time
+            #
+            if keys[K_ESCAPE]:
+                back_to_menu = True
+            if keys[K_n]:
+                new_game = True
+            if keys[K_p]:
+                pause = not pause
+                # print(pause)
+            if not pause:
+                #
+                if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
+                    if event.key == K_LEFT:
+                        if mover_izquierda():
+                            copia_matriz(temporal, pieza)
+                        tiempo_ultima_accion = current_time
 
-                elif event.key == K_RIGHT:
-                    if mover_derecha():
-                        copia_matriz(temporal,pieza)
-                    tiempo_ultima_accion = current_time
-                elif event.key == K_DOWN:
-                    temps_ultima_jugada -= temps_jugada
-                elif event.key == K_UP:
-                    try:
-                        if not rotar():
+                    elif event.key == K_RIGHT:
+                        if mover_derecha():
                             copia_matriz(temporal,pieza)
                         tiempo_ultima_accion = current_time
-                    except:
-                        pass
-        #
-        vista = crear_vista(vista,tablero,pieza)
-        #Imprimir gráficos:
-        imprimir_pantalla_fons(BACKGROUND_IMAGE)
-        pantalla.blit(seccion_transparente, (100, 40))
-        imprimir_piezas()
-        pygame.display.update()
-        clock.tick(fps)
-        current_time = pygame.time.get_ticks()
-        if comprobar_llega_abajo():
-            copia_matriz(vista, tablero)
-            puntos += comprobar_linea_entera()
-            pieza = elegir_pieza()
-        else:
-            if current_time -  temps_ultima_jugada > temps_jugada:
-                temps_ultima_jugada = current_time
-                bajar_pieza()
-                if comprobar_colision(pieza,tablero):
-                    copia_matriz(vista, tablero)
-                    puntos += comprobar_linea_entera()
-                    pieza = elegir_pieza()
-        if comprobar_arriba():
-            imprimir_death(DEATH_SCREEN)
-            time.sleep(3)
-            break
-        print(puntos)
-        if puntos >= 2:
-            temps_jugada = 300
-        if puntos >= 4:
-            temps_jugada = 275
-        if puntos >= 6:
-            temps_jugada = 250
-        if puntos >= 8:
-            temps_jugada = 225
-        if puntos >= 10:
-            temps_jugada = 200
-    #
+                    elif event.key == K_DOWN:
+                        temps_ultima_jugada -= temps_jugada
+                    elif event.key == K_UP:
+                        try:
+                            if not rotar():
+                                copia_matriz(temporal,pieza)
+                            tiempo_ultima_accion = current_time
+                        except:
+                            pass
+        if pause == True:
+            imprimir_death(PAUSE_SCREEN)
+        if not pause:
+            vista = crear_vista(vista,tablero,pieza)
+            #Imprimir gráficos:
+            imprimir_pantalla_fons(BACKGROUND_IMAGE)
+            pantalla.blit(seccion_transparente, (100, 40))
+            imprimir_piezas()
+            print_score()
+            pygame.display.update()
+            clock.tick(fps)
+            current_time = pygame.time.get_ticks()
+            if comprobar_llega_abajo():
+                copia_matriz(vista, tablero)
+                puntos += comprobar_linea_entera()
+                pieza = elegir_pieza()
+            else:
+                if current_time -  temps_ultima_jugada > temps_jugada:
+                    temps_ultima_jugada = current_time
+                    bajar_pieza()
+                    if comprobar_colision(pieza,tablero):
+                        copia_matriz(vista, tablero)
+                        puntos += comprobar_linea_entera()
+                        pieza = elegir_pieza()
+            if comprobar_arriba():
+                imprimir_death(DEATH_SCREEN)
+                time.sleep(3)
+                print('Score: {}\nLines: {}' .format(points, puntos))
+                print(temps_jugada)
+                break
+            if new_game == True:
+                imprimir_death(NEW_GAME_SCREEN)
+                time.sleep(3)
+                main_game()
+                break
+            if back_to_menu == True:
+                imprimir_death(EXIT_MENU_SCREEN)
+                time.sleep(3)
+                break
+            #
+            def score(bef_puntos, temps_jugada):
+                if bef_puntos != puntos:
+                    temps_jugada = 300 - (10 * puntos)
+                    bef_puntos += 1
+                return temps_jugada
+            #
+            temps_jugada = score(bef_puntos, temps_jugada)
+            rest = score(bef_puntos, temps_jugada)
+            points = puntos * 10
+            #
+            # def phase_evolve(phase, puntos, rest, bef_puntos):
+            #     if puntos >= 6:
+            #         phase += 1
+            #         puntos = 0
+            #         bef_puntos = 0
+            #         rest += 5
+            #     return puntos, phase, rest, bef_puntos
+            # #
+            # puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # rest = phase_evolve(phase, puntos, rest, bef_puntos)
+            # phase = phase_evolve(phase, puntos, rest, bef_puntos)
+            # bef_puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # #
