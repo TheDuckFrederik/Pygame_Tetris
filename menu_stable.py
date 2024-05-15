@@ -5,10 +5,11 @@ import pygame
 import random
 import sys
 import numpy as np
-from latest_tetris_game import main_game
+from game_stable import main_game
 #
 HEIGHT, WIDTH = 640, 480
-BACKGROUND_IMAGE = 'assets/background/menu_background_1.png'
+BACKGROUND_IMAGE = 'assets/background/menu_background_2.png'
+END_TITLE = 'assets/background/menu_background_3.png'
 credit = ''
 boing = 'Xavi Sancho'
 x = 0
@@ -16,6 +17,7 @@ x = 0
 pygame.init()
 screen = pygame.display.set_mode((HEIGHT, WIDTH))
 pygame.display.set_caption("Tetris")
+TETRIS = pygame.image.load('assets/peces/TETRIS/TETRIS.png')
 #
 def print_screen_backround(image):
     backround = pygame.image.load(image).convert()
@@ -38,22 +40,43 @@ def credit_animation(credit, x):
     #
     time.sleep(0.7)
 #
-def print_menu():
+def tetris_animation(x):
     print_screen_backround(BACKGROUND_IMAGE)
+    pygame.display.update()
     #
-    transparent_area = pygame.Surface((255, 130), pygame.SRCALPHA)
-    pygame.draw.rect(transparent_area, (0, 0, 0, 100), (0, 0, 255, 130))
+    time.sleep(0.7)
+    for i in range(178):
+        time.sleep(0.02)
+        #
+        print_screen_backround(END_TITLE)
+        screen.blit(TETRIS, (x, 200 - i))
+        #
+        pygame.display.update()
     #
-    screen.blit(transparent_area, (210, 42))
+    time.sleep(0.7)
+def print_menu():
+    print_screen_backround(END_TITLE)
+    #
+    transparent_area = pygame.Surface((526, 87), pygame.SRCALPHA)
+    pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 526, 87))
+    #
+    transparent_area2 = pygame.Surface((480, 102), pygame.SRCALPHA)
+    pygame.draw.rect(transparent_area2, (0, 0, 0, 0), (0, 0, 526, 87))
+    #
+    screen.blit(transparent_area, (62, 377))
+    screen.blit(transparent_area2, (83, 23))
     #
     font = pygame.font.SysFont(None, 36)
     img1 = font.render("1 - Play", True, (255, 255, 255))
-    img2 = font.render("2 - Credits", True, (255, 255, 255))
-    img3 = font.render("3 - Exit", True, (255, 255, 255))
+    img2 = font.render("2 - Hard Mode", True, (255, 255, 255))
+    img3 = font.render("3 - Credits", True, (255, 255, 255))
+    img4 = font.render("4 - Exit", True, (255, 255, 255))
     #
-    screen.blit(img1, (285, 50))
-    screen.blit(img2, (285, 90))
-    screen.blit(img3, (285, 130))
+    screen.blit(img1, (118, 391))
+    screen.blit(img2, (118, 427))
+    screen.blit(img3, (362, 391))
+    screen.blit(img4, (362, 427))
+    screen.blit(TETRIS, (86, 23))
     #
     pygame.display.update()
 #
@@ -62,11 +85,11 @@ while True:
     # #
     # credit_animation('&', 315)
     #
-    credit_animation('Unai O. Pujol',220)
-    #
-    credit_animation('presenta:', 250)
-    #
-    credit_animation('TETRIS', 260)
+    # credit_animation('Unai O. Pujol',220)
+    # #
+    # credit_animation('presenta:', 250)
+    # #
+    tetris_animation(86)
     #
     break
 #
@@ -81,8 +104,10 @@ def tetris_menu():
         keys = pygame.key.get_pressed()
         #
         if keys[K_1]:
-            print('game.py')
+            main_game()
         if keys[K_2]:
+            hard_mode()
+        if keys[K_3]:
             credit_animation('Sprites per:', 210)
             #
             credit_animation('Jan Vilaplana', 217)
@@ -107,10 +132,14 @@ def tetris_menu():
             #
             credit_animation('Jan Vilaplana', 217)
             #
+            credit_animation('Beta testes:', 170)
+            #
+            credit_animation('Raquel Vargas', 217)
+            #
             time.sleep(0.5)
             pygame.display.update()
         #
-        if keys[K_3]:
+        if keys[K_4]:
             pygame.display.update()
             pygame.time.delay(2000)
             pygame.quit()
@@ -120,7 +149,6 @@ def tetris_menu():
             if event.type == pygame.QUIT:
                 pygame.quit()
         #
-        if keys[K_2]:
-            print_menu()
+        print_menu()
     #
 tetris_menu()

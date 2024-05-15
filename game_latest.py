@@ -22,6 +22,8 @@ def main_game():
     points = puntos * 10
     pause = False
     bef_puntos = 0
+    new_game = False
+    back_to_menu = False
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -269,25 +271,7 @@ def main_game():
                     elif vista[fila][pos] == 7:
                         pantalla.blit(pink_tile, (100 + x, y))
 
-    def print_score():
-        #
-        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
-        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
-        #
-        pantalla.blit(transparent_area, (380, 44))
-        #
-        font = pygame.font.SysFont(None, 24)
-        img1 = font.render(("Score: {}" .format(points)), True, (255, 255, 255))
-        img2 = font.render(("Lines: {}" .format(puntos)), True, (255, 255, 255))
-        img3 = font.render(("Phase: {}" .format(phase)), True, (255, 255, 255))
-        #
-        pantalla.blit(img1, (118, 391))
-        pantalla.blit(img2, (118, 427))
-        pantalla.blit(img3, (362, 391))
-        #
-        pygame.display.update()
 
-    #
 
 
 
@@ -347,7 +331,25 @@ def main_game():
                 temporal[a].insert(0,0)
             puede_mover = not comprobar_colision(temporal, tablero)
         return puede_mover
-
+    #
+    def print_score():
+        #
+        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
+        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
+        #
+        pantalla.blit(transparent_area, (380, 44))
+        #
+        font = pygame.font.SysFont(None, 24)
+        img1 = font.render(("Score: {}".format(points)), True, (255, 255, 255))
+        img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
+        img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
+        #
+        pantalla.blit(img1, (385, 47))
+        pantalla.blit(img2, (118, 427))
+        pantalla.blit(img3, (362, 391))
+        #
+        pygame.display.update()
+    #
     # Esta función gira 90 grados la pieza que está bajando
     def rotar():
         puede_rotar = True
@@ -408,15 +410,21 @@ def main_game():
     salir = False
     pieza = elegir_pieza()
     pause = False
+    print_score()
     while not (salir):
         keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+            #
+            if keys[K_ESCAPE]:
+                back_to_menu = True
+            if keys[K_n]:
+                new_game = True
             if keys[K_p]:
                 pause = not pause
-                print(pause)
+                # print(pause)
             if not pause:
                 if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
                     if event.key == K_LEFT:
@@ -453,7 +461,7 @@ def main_game():
                 puntos += comprobar_linea_entera()
                 pieza = elegir_pieza()
             else:
-                if current_time - temps_ultima_jugada > temps_jugada:
+                if current_time -  temps_ultima_jugada > temps_jugada:
                     temps_ultima_jugada = current_time
                     bajar_pieza()
                     if comprobar_colision(pieza,tablero):
@@ -466,13 +474,18 @@ def main_game():
                 print('Points: {}\nLineas: {}' .format(points, puntos))
                 print(temps_jugada)
                 break
-                #
-                def score(bef_puntos, temps_jugada):
-                    if bef_puntos != puntos:
-                        temps_jugada = 300 - (45 * puntos)
-                        bef_puntos += 1
-                    return temps_jugada
-
-                #
-                temps_jugada = score(bef_puntos, temps_jugada)
-                points = puntos * 15
+            if new_game == True:
+                main_game()
+                break
+            if back_to_menu == True:
+                break
+            #
+            def score(bef_puntos, temps_jugada):
+                if bef_puntos != puntos:
+                    temps_jugada = 300 - (45 * puntos)
+                    bef_puntos += 1
+                return temps_jugada
+            #
+            temps_jugada = score(bef_puntos, temps_jugada)
+            points = puntos * 15
+            #
