@@ -269,7 +269,25 @@ def main_game():
                     elif vista[fila][pos] == 7:
                         pantalla.blit(pink_tile, (100 + x, y))
 
+    def print_score():
+        #
+        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
+        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
+        #
+        pantalla.blit(transparent_area, (380, 44))
+        #
+        font = pygame.font.SysFont(None, 24)
+        img1 = font.render(("Score: {}" .format(points)), True, (255, 255, 255))
+        img2 = font.render(("Lines: {}" .format(puntos)), True, (255, 255, 255))
+        img3 = font.render(("Phase: {}" .format(phase)), True, (255, 255, 255))
+        #
+        pantalla.blit(img1, (118, 391))
+        pantalla.blit(img2, (118, 427))
+        pantalla.blit(img3, (362, 391))
+        #
+        pygame.display.update()
 
+    #
 
 
 
@@ -435,7 +453,7 @@ def main_game():
                 puntos += comprobar_linea_entera()
                 pieza = elegir_pieza()
             else:
-                if current_time -  temps_ultima_jugada > temps_jugada:
+                if current_time - temps_ultima_jugada > temps_jugada:
                     temps_ultima_jugada = current_time
                     bajar_pieza()
                     if comprobar_colision(pieza,tablero):
@@ -463,11 +481,22 @@ def main_game():
             # #
             # phase_counter(phase, puntos, rest)
             #
-            def score(bef_puntos, temps_jugada):
+            def score(bef_puntos, temps_jugada, phase):
+                aug = 45
+                if phase >= 2:
+                    aug = 45 + (15 * phase)
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (45 * puntos)
+                    temps_jugada = 300 - (aug * puntos)
                     bef_puntos += 1
-                return temps_jugada
+                return temps_jugada, bef_puntos
             #
-            temps_jugada = score(bef_puntos, temps_jugada)
+            def phase_calc(phase, puntos, bef_puntos):
+                def_phase = 0
+                if def_phase != phase:
+                    puntos = 0
+                    bef_puntos = 0
+                return phase, bef_puntos, puntos
+            temps_jugada = score(bef_puntos, temps_jugada, phase)
+            bef_puntos = phase_calc(phase, puntos, bef_puntos)
+            puntos = phase_calc(phase, puntos, bef_puntos)
             points = puntos * 15
