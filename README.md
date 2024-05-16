@@ -2,4 +2,4 @@
 ## By: Unai O. Pujol
 ![image](https://github.com/UnOvPj/Pygame_Tetris/assets/145444669/a0ddff09-8f5b-452b-a7a5-4ef08f2b4d7c)
 
-With the ocasional help of Jan Vilaplana we have created this game as a project for our subject Introduction to Programming. M14. Except for the music we have created everything else ourselves. We'd like to say thanks to our amazing teacher XaSaFa for helping us in our jurney.
+With the ocasional help of Jan Vilaplana we have created this game as a project for our subject Introduction to Programming. M14. Except for the music we have created everything else ourselves. We'd like to say thanks to our amazing teacher XaSaFa for helping us in our jurney. Also I would like to give credit to Michael Hunter & Kōji Kondō for the music credit.
