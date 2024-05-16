@@ -511,7 +511,7 @@ def main_game():
             #
             temps_jugada = score(bef_puntos, temps_jugada)
             rest = score(bef_puntos, temps_jugada)
-            points = puntos * 10
+            points = puntos * (10 * puntos)
             #
             # def phase_evolve(phase, puntos, rest, bef_puntos):
             #     if puntos >= 6:
