@@ -18,10 +18,12 @@ def main_game():
     tiempo_ultima_accion = 0
     puntos = 0
     phase = 1
-    rest = 25
+    rest = 10
     points = puntos * 10
     pause = False
     bef_puntos = 0
+    new_game = False
+    back_to_menu = False
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -129,11 +131,13 @@ def main_game():
     # death = pygame.display.set_mode((pantalla_ancho, pantalla_alto))
     # CREAR LA SUPERFÍCIE TRANSPARENTE I EL RECTÁNGULO SOBRE ELLA:
     seccion_transparente = pygame.Surface((200,400),pygame.SRCALPHA)
-    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,400))
+    pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,0))####400
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
     PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
+    NEW_GAME_SCREEN = 'assets/background/New_Game_Screen.png'
+    EXIT_MENU_SCREEN = 'assets/background/Exit_Menu_Screen.png'
     green_tile = pygame.image.load('assets/peces/Z/z_block.png').convert()
     orange_tile = pygame.image.load('assets/peces/T/t_block.png').convert()
     red_tile = pygame.image.load('assets/peces/I/i_block.png').convert()
@@ -142,6 +146,15 @@ def main_game():
     blue_tile = pygame.image.load('assets/peces/L/l_block.png').convert()
     pink_tile = pygame.image.load('assets/peces/O/o_block.png').convert()
     #
+    GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
+    SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
+    bgm_choice_num = random.randint(0, 1)
+    if bgm_choice_num == 0:
+        bgm_choice = GERUDO_VALLEY
+    elif bgm_choice_num == 1:
+        bgm_choice = SOVIET_CONNECTIONS
+    bgm = pygame.mixer.Sound(bgm_choice)
+    bgm.play(-1)
     # Control de FPS
     clock = pygame.time.Clock()
     fps = 30
@@ -269,25 +282,7 @@ def main_game():
                     elif vista[fila][pos] == 7:
                         pantalla.blit(pink_tile, (100 + x, y))
 
-    def print_score():
-        #
-        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
-        pygame.draw.rect(transparent_area, (0, 0, 0, 200), (0, 0, 248, 164))
-        #
-        pantalla.blit(transparent_area, (380, 44))
-        #
-        font = pygame.font.SysFont(None, 24)
-        img1 = font.render(("Score: {}" .format(points)), True, (255, 255, 255))
-        img2 = font.render(("Lines: {}" .format(puntos)), True, (255, 255, 255))
-        img3 = font.render(("Phase: {}" .format(phase)), True, (255, 255, 255))
-        #
-        pantalla.blit(img1, (118, 391))
-        pantalla.blit(img2, (118, 427))
-        pantalla.blit(img3, (362, 391))
-        #
-        pygame.display.update()
 
-    #
 
 
 
@@ -347,7 +342,24 @@ def main_game():
                 temporal[a].insert(0,0)
             puede_mover = not comprobar_colision(temporal, tablero)
         return puede_mover
-
+    #
+    def print_score():
+        #
+        transparent_area = pygame.Surface((248, 164), pygame.SRCALPHA)
+        pygame.draw.rect(transparent_area, (0, 0, 0, 0), (0, 0, 248, 164))
+        #
+        pantalla.blit(transparent_area, (340, 40))
+        #
+        font = pygame.font.SysFont(None, 32)
+        img1 = font.render(("Score: {}".format(points)), True, (255, 255, 255))
+        img2 = font.render(("Lines: {}".format(puntos)), True, (255, 255, 255))
+        img3 = font.render(("Phase: {}".format(phase)), True, (255, 255, 255))
+        #
+        pantalla.blit(img1, (350, 53))
+        pantalla.blit(img2, (350, 112))
+        pantalla.blit(img3, (350, 171))
+        #
+    #
     # Esta función gira 90 grados la pieza que está bajando
     def rotar():
         puede_rotar = True
@@ -408,16 +420,26 @@ def main_game():
     salir = False
     pieza = elegir_pieza()
     pause = False
+    #
     while not (salir):
         keys = pygame.key.get_pressed()
         current_time = pygame.time.get_ticks()
         for event in pygame.event.get():
+            #
+            print_score()
+            #
             if event.type == pygame.QUIT:
                 pygame.quit()
+            #
+            if keys[K_ESCAPE]:
+                back_to_menu = True
+            if keys[K_n]:
+                new_game = True
             if keys[K_p]:
                 pause = not pause
-                print(pause)
+                # print(pause)
             if not pause:
+                #
                 if event.type == KEYDOWN and current_time - tiempo_ultima_accion > tiempo_accion:
                     if event.key == K_LEFT:
                         if mover_izquierda():
@@ -445,6 +467,7 @@ def main_game():
             imprimir_pantalla_fons(BACKGROUND_IMAGE)
             pantalla.blit(seccion_transparente, (100, 40))
             imprimir_piezas()
+            print_score()
             pygame.display.update()
             clock.tick(fps)
             current_time = pygame.time.get_ticks()
@@ -453,7 +476,7 @@ def main_game():
                 puntos += comprobar_linea_entera()
                 pieza = elegir_pieza()
             else:
-                if current_time - temps_ultima_jugada > temps_jugada:
+                if current_time -  temps_ultima_jugada > temps_jugada:
                     temps_ultima_jugada = current_time
                     bajar_pieza()
                     if comprobar_colision(pieza,tablero):
@@ -461,42 +484,44 @@ def main_game():
                         puntos += comprobar_linea_entera()
                         pieza = elegir_pieza()
             if comprobar_arriba():
+                bgm.stop()
                 imprimir_death(DEATH_SCREEN)
                 time.sleep(3)
-                print('Points: {}\nLineas: {}' .format(points, puntos))
+                print('Score: {}\nLines: {}' .format(points, puntos))
                 print(temps_jugada)
                 break
-            #
-            # def phase_counter(x, y, z):
-            #     if x >= 2:
-            #         phase_cnt = x
-            #         z = 25 + (13 * phase_cnt)
-            #     if y >= 2:
-            #         temps_jugada = 300
-            #     if y >= 4:
-            #         temps_jugada = 300 - z
-            #         x += 1
-            #         y = 0
-            #     print(x)
-            # #
-            # phase_counter(phase, puntos, rest)
+            if new_game == True:
+                bgm.stop()
+                imprimir_death(NEW_GAME_SCREEN)
+                time.sleep(3)
+                main_game()
+                break
+            if back_to_menu == True:
+                bgm.stop()
+                imprimir_death(EXIT_MENU_SCREEN)
+                time.sleep(3)
+                break
             #
             def score(bef_puntos, temps_jugada):
-                aug = 45
-                if phase >= 2:
-                    aug = 45 + (15 * phase)
                 if bef_puntos != puntos:
-                    temps_jugada = 300 - (aug * puntos)
+                    temps_jugada = 300 - (10 * puntos)
                     bef_puntos += 1
-                return temps_jugada, bef_puntos
+                return temps_jugada
             #
-            # def phase_calc(phase, puntos, bef_puntos):
-            #     def_phase = 0
-            #     if def_phase != phase:
+            temps_jugada = score(bef_puntos, temps_jugada)
+            rest = score(bef_puntos, temps_jugada)
+            points = puntos * 10
+            #
+            # def phase_evolve(phase, puntos, rest, bef_puntos):
+            #     if puntos >= 6:
+            #         phase += 1
             #         puntos = 0
             #         bef_puntos = 0
-            #     return phase, bef_puntos, puntos
-            temps_jugada = score(bef_puntos, temps_jugada)
-            # bef_puntos = phase_calc(phase, puntos, bef_puntos)
-            # puntos = phase_calc(phase, puntos, bef_puntos)
-            points = puntos * 15
+            #         rest += 5
+            #     return puntos, phase, rest, bef_puntos
+            # #
+            # puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # rest = phase_evolve(phase, puntos, rest, bef_puntos)
+            # phase = phase_evolve(phase, puntos, rest, bef_puntos)
+            # bef_puntos = phase_evolve(phase, puntos, rest, bef_puntos)
+            # #

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.2.2">
-      <change beforePath="$PROJECT_DIR$/game_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_latest.py" afterDir="false" />
-    </list>
+    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.3.2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +22,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/UnOvPj/Pygame_Tetris.git&quot;,
-    &quot;accountId&quot;: &quot;f6c44c74-7456-418b-9814-26f744074e20&quot;
+    &quot;accountId&quot;: &quot;24b147ea-e5bb-4a92-b357-a2d2e7e73eaa&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -38,10 +36,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Python.game_latest.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.game_latest.executor&quot;: &quot;Run&quot;,
     &quot;Python.menu_latest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.menu_stable.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;test&quot;
+    &quot;git-widget-placeholder&quot;: &quot;R&amp;&amp;D&quot;
   }
 }</component>
   <component name="RunManager" selected="Python.menu_latest">
@@ -89,10 +88,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="menu_stable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tetris" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/menu_stable.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.menu_latest" />
         <item itemvalue="Python.game_latest" />
+        <item itemvalue="Python.menu_stable" />
       </list>
     </recent_temporary>
   </component>
@@ -280,16 +302,176 @@
       <option name="project" value="LOCAL" />
       <updated>1715771295478</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="v.0.2.3">
+      <option name="closed" value="true" />
+      <created>1715785852285</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715785852285</updated>
+    </task>
+    <task id="LOCAL-00023" summary="v.0.2.3">
+      <option name="closed" value="true" />
+      <created>1715787793322</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715787793322</updated>
+    </task>
+    <task id="LOCAL-00024" summary="v.0.2.4">
+      <option name="closed" value="true" />
+      <created>1715791874182</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715791874182</updated>
+    </task>
+    <task id="LOCAL-00025" summary="v.0.2.5">
+      <option name="closed" value="true" />
+      <created>1715792144500</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715792144500</updated>
+    </task>
+    <task id="LOCAL-00026" summary="v.0.2.5">
+      <option name="closed" value="true" />
+      <created>1715802313282</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715802313282</updated>
+    </task>
+    <task id="LOCAL-00027" summary="v.0.2.6">
+      <option name="closed" value="true" />
+      <created>1715803983889</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715803983889</updated>
+    </task>
+    <task id="LOCAL-00028" summary="v.0.2.6">
+      <option name="closed" value="true" />
+      <created>1715804056060</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1715804056060</updated>
+    </task>
+    <task id="LOCAL-00029" summary="v.0.2.6">
+      <option name="closed" value="true" />
+      <created>1715805643497</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1715805643497</updated>
+    </task>
+    <task id="LOCAL-00030" summary="v.0.2.7">
+      <option name="closed" value="true" />
+      <created>1715806145097</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1715806145097</updated>
+    </task>
+    <task id="LOCAL-00031" summary="v.0.2.7">
+      <option name="closed" value="true" />
+      <created>1715808013123</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1715808013123</updated>
+    </task>
+    <task id="LOCAL-00032" summary="v.0.2.8">
+      <option name="closed" value="true" />
+      <created>1715810332610</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1715810332610</updated>
+    </task>
+    <task id="LOCAL-00033" summary="v.0.2.8">
+      <option name="closed" value="true" />
+      <created>1715810706331</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1715810706331</updated>
+    </task>
+    <task id="LOCAL-00034" summary="v.0.2.9">
+      <option name="closed" value="true" />
+      <created>1715813059352</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1715813059352</updated>
+    </task>
+    <task id="LOCAL-00035" summary="v.0.2.9">
+      <option name="closed" value="true" />
+      <created>1715813320987</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715813320987</updated>
+    </task>
+    <task id="LOCAL-00036" summary="v.0.3.1">
+      <option name="closed" value="true" />
+      <created>1715816242539</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715816242539</updated>
+    </task>
+    <task id="LOCAL-00037" summary="v.0.3.1">
+      <option name="closed" value="true" />
+      <created>1715816428110</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715816428110</updated>
+    </task>
+    <task id="LOCAL-00038" summary="v.0.3.2">
+      <option name="closed" value="true" />
+      <created>1715818360960</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1715818360960</updated>
+    </task>
+    <task id="LOCAL-00039" summary="v.0.3.2">
+      <option name="closed" value="true" />
+      <created>1715818392354</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1715818392354</updated>
+    </task>
+    <task id="LOCAL-00040" summary="v.0.3.2">
+      <option name="closed" value="true" />
+      <created>1715818395549</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1715818395549</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v.0.1.20" />
     <MESSAGE value="v.0.1.21" />
     <MESSAGE value="v.0.1.22" />
-    <MESSAGE value="v.0.2.3" />
     <MESSAGE value="v.0.2.1" />
     <MESSAGE value="v.0.2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.2.2" />
+    <MESSAGE value="v.0.2.3" />
+    <MESSAGE value="v.0.2.4" />
+    <MESSAGE value="v.0.2.5" />
+    <MESSAGE value="v.0.2.6" />
+    <MESSAGE value="v.0.2.7" />
+    <MESSAGE value="v.0.2.8" />
+    <MESSAGE value="v.0.2.9" />
+    <MESSAGE value="v.0.3.1" />
+    <MESSAGE value="v.0.3.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.3.2" />
   </component>
 </project>
