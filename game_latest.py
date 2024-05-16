@@ -26,7 +26,7 @@ def main_game():
     new_game = False
     back_to_menu = False
     suma = 0
-    count = int(0)
+    last_points = 5
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -512,19 +512,15 @@ def main_game():
                     bef_puntos += 1
                 return temps_jugada
             #
-            def score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos):
+            def score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points):
                 if bef_sum_puntos != puntos:
-                    if puntos == 1:
-                        points = puntos + 10
-                        points -= 1
-                    elif puntos >= 2:
-                        points = puntos + 20
-                        points -= 2
+                    points = (last_points * 2)
+                    last_points = points
                 return points
             #
             temps_jugada = score(bef_puntos, temps_jugada )
             rest = score(bef_puntos, temps_jugada)
-            points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos)
+            points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points)
             #
             # def phase_evolve(phase, puntos, rest, bef_puntos):
             #     if puntos >= 6:

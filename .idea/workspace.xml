@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.3.5">
+    <list default="true" id="4c632379-6304-4054-b915-43c4280cd7ae" name="Changes" comment="v.0.3.6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_latest.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_latest.py" afterDir="false" />
     </list>
@@ -520,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715849068737</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="v.0.3.6">
+      <option name="closed" value="true" />
+      <created>1715853145713</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1715853145713</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -541,6 +549,7 @@
     <MESSAGE value="v.0.3.3" />
     <MESSAGE value="v.0.3.4" />
     <MESSAGE value="v.0.3.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0.3.5" />
+    <MESSAGE value="v.0.3.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0.3.6" />
   </component>
 </project>
