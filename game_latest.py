@@ -146,6 +146,15 @@ def main_game():
     blue_tile = pygame.image.load('assets/peces/L/l_block.png').convert()
     pink_tile = pygame.image.load('assets/peces/O/o_block.png').convert()
     #
+    GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
+    SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
+    bgm_choice_num = random.randint(0, 1)
+    if bgm_choice_num == 0:
+        bgm_choice = GERUDO_VALLEY
+    elif bgm_choice_num == 1:
+        bgm_choice = SOVIET_CONNECTIONS
+    bgm = pygame.mixer.Sound(bgm_choice)
+    bgm.play(-1)
     # Control de FPS
     clock = pygame.time.Clock()
     fps = 30
@@ -475,17 +484,20 @@ def main_game():
                         puntos += comprobar_linea_entera()
                         pieza = elegir_pieza()
             if comprobar_arriba():
+                bgm.stop()
                 imprimir_death(DEATH_SCREEN)
                 time.sleep(3)
                 print('Score: {}\nLines: {}' .format(points, puntos))
                 print(temps_jugada)
                 break
             if new_game == True:
+                bgm.stop()
                 imprimir_death(NEW_GAME_SCREEN)
                 time.sleep(3)
                 main_game()
                 break
             if back_to_menu == True:
+                bgm.stop()
                 imprimir_death(EXIT_MENU_SCREEN)
                 time.sleep(3)
                 break

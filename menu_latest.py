@@ -11,6 +11,8 @@ from hard_mode_latest import hard_mode
 HEIGHT, WIDTH = 640, 480
 BACKGROUND_IMAGE = 'assets/background/menu_background_2.png'
 END_TITLE = 'assets/background/menu_background_3.png'
+GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
+SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
 credit = ''
 boing = 'Xavi Sancho'
 x = 0
@@ -123,7 +125,11 @@ def tetris_menu():
             #
             credit_animation('Musica per:', 220)
             #
-            credit_animation('Unai O. Pujol', 220)
+            credit_animation('Kōji Kondō', 220)
+            #
+            credit_animation('&', 315)
+            #
+            credit_animation('Michael Hunter', 220)
             #
             credit_animation('El millor profe del mon:', 120)
             #
@@ -133,7 +139,7 @@ def tetris_menu():
             #
             credit_animation('Jan Vilaplana', 217)
             #
-            credit_animation('Beta testes:', 170)
+            credit_animation('Beta tester:', 170)
             #
             credit_animation('Raquel Vargas', 217)
             #
