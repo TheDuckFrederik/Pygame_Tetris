@@ -494,7 +494,7 @@ def hard_mode():
                 bgm.stop()
                 imprimir_death(NEW_GAME_SCREEN)
                 time.sleep(3)
-                main_game()
+                hard_mode()
                 break
             if back_to_menu == True:
                 bgm.stop()
