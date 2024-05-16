@@ -492,6 +492,7 @@ def main_game():
                 break
             if new_game == True:
                 bgm.stop()
+                bgm_choice_num = random.randint(0, 1)
                 imprimir_death(NEW_GAME_SCREEN)
                 time.sleep(3)
                 main_game()

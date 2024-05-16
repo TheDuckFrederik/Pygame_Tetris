@@ -148,8 +148,8 @@ def hard_mode():
     #
     GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
     SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
-    bgm_choice_num = random.randint(0, 1)
-    if bgm_choice_num == 0:
+    bgm_choice_num = random.randint(0, 2)
+    if bgm_choice_num == 0 or 2:
         bgm_choice = GERUDO_VALLEY
     elif bgm_choice_num == 1:
         bgm_choice = SOVIET_CONNECTIONS
