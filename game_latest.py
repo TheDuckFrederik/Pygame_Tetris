@@ -22,8 +22,11 @@ def main_game():
     points = puntos * 10
     pause = False
     bef_puntos = 0
+    bef_sum_puntos = 0
     new_game = False
     back_to_menu = False
+    suma = 0
+    last_points = 5
 
     tablero = [
                 [0,0,0,0,0,0,0,0,0,0],
@@ -134,6 +137,7 @@ def main_game():
     pygame.draw.rect(seccion_transparente,COLOR_TRANSPARENTE,(0,0,200,0))####400
     # Imágenes
     BACKGROUND_IMAGE = 'assets/background/background_ingame_back.png'
+    DEATH_BACKGROUND_IMAGE = 'assets/background/death_background_ingame_back.png'
     DEATH_SCREEN = 'assets/background/Death_Screen.png'
     PAUSE_SCREEN = 'assets/background/Paused_Screen.png'
     NEW_GAME_SCREEN = 'assets/background/New_Game_Screen.png'
@@ -484,6 +488,11 @@ def main_game():
                         puntos += comprobar_linea_entera()
                         pieza = elegir_pieza()
             if comprobar_arriba():
+                print_score()
+                pygame.display.update()
+                imprimir_death(DEATH_BACKGROUND_IMAGE)
+                print_score()
+                time.sleep(1.5)
                 bgm.stop()
                 imprimir_death(DEATH_SCREEN)
                 time.sleep(3)
@@ -492,6 +501,7 @@ def main_game():
                 break
             if new_game == True:
                 bgm.stop()
+                bgm_choice_num = random.randint(0, 1)
                 imprimir_death(NEW_GAME_SCREEN)
                 time.sleep(3)
                 main_game()
@@ -508,9 +518,15 @@ def main_game():
                     bef_puntos += 1
                 return temps_jugada
             #
+            def score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points):
+                if bef_sum_puntos != puntos:
+                    points = (last_points * 2)
+                    last_points = points
+                return points
+            #
             temps_jugada = score(bef_puntos, temps_jugada)
             rest = score(bef_puntos, temps_jugada)
-            points = puntos * 10
+            points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points)
             #
             # def phase_evolve(phase, puntos, rest, bef_puntos):
             #     if puntos >= 6:
