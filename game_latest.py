@@ -152,8 +152,8 @@ def main_game():
     #
     GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
     SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
-    bgm_choice_num = random.randint(0, 1)
-    if bgm_choice_num == 0:
+    bgm_choice_num = random.randint(0, 2)
+    if bgm_choice_num == 0 or 2:
         bgm_choice = GERUDO_VALLEY
     elif bgm_choice_num == 1:
         bgm_choice = SOVIET_CONNECTIONS
@@ -524,7 +524,7 @@ def main_game():
                     last_points = points
                 return points
             #
-            temps_jugada = score(bef_puntos, temps_jugada )
+            temps_jugada = score(bef_puntos, temps_jugada)
             rest = score(bef_puntos, temps_jugada)
             points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points)
             #
