@@ -518,15 +518,16 @@ def main_game():
                     bef_puntos += 1
                 return temps_jugada
             #
-            def score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points):
-                if bef_sum_puntos != puntos:
-                    points = (last_points * 2)
-                    last_points = points
-                return points
-            #
+            # def score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points):
+            #     if bef_sum_puntos != puntos:
+            #         points = (last_points * 2)
+            #         last_points = points
+            #     return points
+            # #
             temps_jugada = score(bef_puntos, temps_jugada)
             rest = score(bef_puntos, temps_jugada)
-            points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points)
+            # points = score_sum(bef_sum_puntos, temps_jugada, suma, points, puntos, last_points)
+            points = puntos * 10
             #
             # def phase_evolve(phase, puntos, rest, bef_puntos):
             #     if puntos >= 6:
