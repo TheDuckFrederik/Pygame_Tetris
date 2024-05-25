@@ -146,13 +146,8 @@ def hard_mode():
     blue_tile = pygame.image.load('assets/peces/L/l_block.png').convert()
     pink_tile = pygame.image.load('assets/peces/O/o_block.png').convert()
     #
-    GERUDO_VALLEY = 'assets/music/Gerudo_Valley.mp3'
-    SOVIET_CONNECTIONS = 'assets/music/SOVIET_CONNECTIONS.mp3'
-    bgm_choice_num = random.randint(0, 2)
-    if bgm_choice_num == 0 or 2:
-        bgm_choice = GERUDO_VALLEY
-    elif bgm_choice_num == 1:
-        bgm_choice = SOVIET_CONNECTIONS
+    E1_M1 = 'assets/music/E1_M1.mp3'
+    bgm_choice = E1_M1
     bgm = pygame.mixer.Sound(bgm_choice)
     bgm.play(-1)
     # Control de FPS
